@@ -3,13 +3,31 @@ import { PageLayout } from "../components/layout/PageLayout";
 import { menuItems } from "../data/menu";
 import heroImg from "@assets/att.zF1zSKs8HE67Fv1Ysn_cQNG7xuMXY-hnNeYQLjM67bU_1775869943923.jpeg";
 import aboutImg from "@assets/att.He80MLl2WKJIpBo865cw2_TJW-lTG6BDeJQ-TINd5m8_1775869943923.jpeg";
+import gallery1 from "@assets/att.HQSPLJRNfF28v2i8Y4oH_xO7Im3GZ1e-4hCMbfyHlUk_1775869943923.jpeg";
+import gallery2 from "@assets/att.qOSDHH62gq5NRRtaTOsXClmp7ZV4gqR2W9ulLehqcMY_1775869943923.jpeg";
+import gallery3 from "@assets/att.o6wypxRaEioByCQGwWXcek02sBjEzj9H8bGGx8y5RQI_1775869943923.jpeg";
+import gallery4 from "@assets/att.A69rdFWTe3wzITD52xuHTwgrojwY7VkksIX_4GHQRJI_1775869943923.jpeg";
+import gallery5 from "@assets/att.VvcqNuUBwxjs3UpPbbrYE9R9cY2Sr8uFMo7ANHklVJ4_1775869943923.jpeg";
+import gallery6 from "@assets/att.YYNyzODCUYr-GbkJ2Nig5eg7uhaYcjBubYlMsDSVAYg_1775869943923.jpeg";
+import gallery7 from "@assets/att.EkvSkwLjDBW1ODlDvD9LxFy62g3LHYLk-ov6o-AmAyQ_1775869943923.jpeg";
+import gallery8 from "@assets/att.rmF16ZLZXPQ2l38adXEuFJ76YofuI67T1r5bQiSxikc_1775869943923.jpeg";
+
+const galleryImages = [
+  { src: gallery1, alt: "Roasted meat with vegetables" },
+  { src: gallery2, alt: "Panko crusted fish with quinoa" },
+  { src: gallery3, alt: "Citrus stir fry" },
+  { src: gallery4, alt: "Beef stir fry" },
+  { src: gallery5, alt: "Crispy chicken with dipping sauce" },
+  { src: gallery6, alt: "Grilled vegetables" },
+  { src: gallery7, alt: "Chicken with pineapple salsa" },
+  { src: gallery8, alt: "Turkey dinner with vegetables" },
+];
 
 export default function Home() {
   const featuredMeals = menuItems.slice(0, 3);
 
   return (
     <PageLayout>
-      {/* Hero Section */}
       <section className="relative overflow-hidden bg-primary text-white">
         <div className="absolute inset-0 z-0">
           <img 
@@ -51,7 +69,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* How it Works */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -80,7 +97,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Meals */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
@@ -130,7 +146,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Target Audience */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -155,7 +170,43 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl font-serif font-bold text-primary mb-4">From Our Kitchen</h2>
+            <p className="text-muted-foreground text-lg">Real meals, prepared fresh every week by our chef.</p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+            {galleryImages.map((img, i) => (
+              <div
+                key={i}
+                className={`group overflow-hidden rounded-xl shadow-sm ${
+                  i === 0 || i === 5 ? "md:row-span-2" : ""
+                }`}
+              >
+                <div className={`overflow-hidden ${i === 0 || i === 5 ? "aspect-square md:aspect-auto md:h-full" : "aspect-square"}`}>
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <Link
+              href="/menu"
+              className="inline-flex justify-center items-center rounded-md bg-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground shadow hover:bg-primary/90 hover:scale-105 transition-all"
+            >
+              See This Week's Menu
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="py-24 bg-primary text-white overflow-hidden relative">
         <div className="absolute top-0 right-0 w-1/2 h-full opacity-10 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-secondary via-transparent to-transparent hidden lg:block"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -202,8 +253,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl font-serif font-bold text-primary mb-4">What Kingston Is Saying</h2>
@@ -239,8 +289,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-24 bg-background border-t border-border">
+      <section className="py-24 bg-muted/30 border-t border-border">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-6">Ready for a Better Dinner?</h2>
           <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">

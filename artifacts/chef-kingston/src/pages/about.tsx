@@ -1,6 +1,6 @@
 import { PageLayout } from "../components/layout/PageLayout";
 import { Link } from "wouter";
-import aboutImg from "@assets/att.QxDSNAc8bqLMwOjg974AJKZuG5rwmXfhpEvXFlBMbvw.png_1775869943923.jpeg";
+import aboutImg from "@assets/att.J5mBriJkII7OGL5oPvxlZxyGMhLkpvzbH8sA1bQDX9o.png_1775869943923.jpeg";
 
 export default function About() {
   return (
@@ -55,11 +55,11 @@ export default function About() {
 
           <div className="order-1 lg:order-2">
             <div className="relative">
-              <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-xl">
+              <div className="rounded-2xl overflow-hidden shadow-xl bg-primary p-8 flex items-center justify-center">
                 <img 
                   src={aboutImg} 
-                  alt="Professional Chef in Kitchen" 
-                  className="w-full h-full object-cover"
+                  alt="Your Personal Chef Kingston" 
+                  className="w-full h-auto object-contain max-h-[500px]"
                 />
               </div>
               <div className="absolute -top-6 -right-6 w-32 h-32 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-secondary/40 to-transparent -z-10 blur-xl"></div>

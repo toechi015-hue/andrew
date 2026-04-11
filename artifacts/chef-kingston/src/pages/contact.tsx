@@ -1,11 +1,16 @@
 import { PageLayout } from "../components/layout/PageLayout";
 import { Phone, Mail, MapPin, MessageCircle, Send } from "lucide-react";
+import heroImg from "@assets/att.He80MLl2WKJIpBo865cw2_TJW-lTG6BDeJQ-TINd5m8_1775869943923.jpeg";
 
 export default function Contact() {
   return (
     <PageLayout>
-      <div className="bg-primary pt-24 pb-16 px-4 sm:px-6 lg:px-8 text-center">
-        <div className="container mx-auto max-w-4xl">
+      <div className="relative bg-primary pt-24 pb-16 px-4 sm:px-6 lg:px-8 text-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img src={heroImg} alt="Chef prepared meals" className="h-full w-full object-cover opacity-25" />
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/70 via-primary/80 to-primary/90"></div>
+        </div>
+        <div className="relative z-10 container mx-auto max-w-4xl">
           <h1 className="text-4xl sm:text-5xl font-serif font-bold text-white mb-6">Get in Touch</h1>
           <p className="text-lg text-white/80 max-w-2xl mx-auto">
             Ready to order or have a question about our services? We're here to help make dinner easier.
@@ -16,7 +21,6 @@ export default function Contact() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
           
-          {/* Contact Info */}
           <div>
             <h2 className="text-3xl font-serif font-bold text-primary mb-8">Contact Information</h2>
             
@@ -87,7 +91,6 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Form */}
           <div className="bg-card border border-border shadow-sm rounded-2xl p-8">
             <h2 className="text-2xl font-serif font-bold text-primary mb-6">Send a Message</h2>
             <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
@@ -116,7 +119,6 @@ export default function Contact() {
         </div>
       </div>
 
-      {/* Map Placeholder */}
       <div className="bg-muted/30 border-t border-border">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <h2 className="text-2xl font-serif font-bold text-primary mb-6">Our Service Area</h2>

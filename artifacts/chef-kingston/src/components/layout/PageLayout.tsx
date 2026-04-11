@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { useState } from "react";
 import navLogo from "@assets/att.Yeeup1CO9VY9Crw97iTvpDTiILgB9ae2yfNErH_GxAA.png_1775869943923.jpeg";
+import bannerLogo from "@assets/att.J5mBriJkII7OGL5oPvxlZxyGMhLkpvzbH8sA1bQDX9o.png_1775869943923.jpeg";
 
 function AnnouncementBar() {
   return (
@@ -122,8 +123,10 @@ function Footer() {
 
         <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div className="text-center sm:text-left">
-            <p className="text-lg font-medium text-white font-serif">Your Personal Chef Kingston</p>
-            <p className="mt-4 max-w-xs mx-auto sm:mx-0 text-white/80">
+            <Link href="/" className="inline-block mb-4">
+              <img src={bannerLogo} alt="Your Personal Chef Kingston" className="h-16 w-auto object-contain brightness-0 invert mx-auto sm:mx-0" />
+            </Link>
+            <p className="mt-2 max-w-xs mx-auto sm:mx-0 text-white/80">
               Freshly made meals in Kingston, prepared by a Red Seal certified chef. Ready when you are.
             </p>
           </div>
