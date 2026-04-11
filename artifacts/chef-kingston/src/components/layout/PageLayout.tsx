@@ -126,6 +126,7 @@ function Footer() {
             <Link href="/" className="inline-block mb-4">
               <img src={bannerLogo} alt="Your Personal Chef Kingston" className="h-16 w-auto object-contain brightness-0 invert mx-auto sm:mx-0" />
             </Link>
+            <p className="text-lg font-medium text-white font-serif mt-2">Your Personal Chef Kingston</p>
             <p className="mt-2 max-w-xs mx-auto sm:mx-0 text-white/80">
               Freshly made meals in Kingston, prepared by a Red Seal certified chef. Ready when you are.
             </p>
