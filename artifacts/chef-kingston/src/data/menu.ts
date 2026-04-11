@@ -1,6 +1,6 @@
-import menuChickenParm from "@assets/att.EkvSkwLjDBW1ODlDvD9LxFy62g3LHYLk-ov6o-AmAyQ_1775869943923.jpeg";
-import menuBeefStirFry from "@assets/att.A69rdFWTe3wzITD52xuHTwgrojwY7VkksIX_4GHQRJI_1775869943923.jpeg";
-import menuEnchiladas from "@assets/att.7hdhp98sexptb5U1uI_eaTIHku5VtG_w7Z8Kh1QK6iY_1775869943923.jpeg";
+import menuChickenParm from "@assets/IMG_2237_1775871535914.jpeg";
+import menuBeefStirFry from "@assets/IMG_2239_1775871535914.jpeg";
+import menuEnchiladas from "@assets/IMG_2238_1775871535914.jpeg";
 
 export type MenuItem = {
   id: string;
