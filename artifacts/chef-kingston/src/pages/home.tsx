@@ -1,8 +1,8 @@
 import { Link } from "wouter";
 import { PageLayout } from "../components/layout/PageLayout";
 import { menuItems } from "../data/menu";
-import heroImg from "../assets/images/hero.png";
-import aboutImg from "../assets/images/about-chef.png";
+import heroImg from "@assets/att.zF1zSKs8HE67Fv1Ysn_cQNG7xuMXY-hnNeYQLjM67bU_1775869943923.jpeg";
+import aboutImg from "@assets/att.He80MLl2WKJIpBo865cw2_TJW-lTG6BDeJQ-TINd5m8_1775869943923.jpeg";
 
 export default function Home() {
   const featuredMeals = menuItems.slice(0, 3);

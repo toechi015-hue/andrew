@@ -1,6 +1,6 @@
 import { PageLayout } from "../components/layout/PageLayout";
 import { Link } from "wouter";
-import aboutImg from "../assets/images/about-chef.png";
+import aboutImg from "@assets/att.QxDSNAc8bqLMwOjg974AJKZuG5rwmXfhpEvXFlBMbvw.png_1775869943923.jpeg";
 
 export default function About() {
   return (

@@ -1,13 +1,13 @@
-import menuChicken from "../assets/images/menu-chicken.png";
-import menuStew from "../assets/images/menu-stew.png";
-import menuSalmon from "../assets/images/menu-salmon.png";
-import menuStirfry from "../assets/images/menu-stirfry.png";
-import menuBbq from "../assets/images/menu-bbq.png";
-import menuBolognese from "../assets/images/menu-bolognese.png";
-import menuShrimp from "../assets/images/menu-shrimp.png";
-import menuMeatballs from "../assets/images/menu-meatballs.png";
-import menuLasagna from "../assets/images/menu-lasagna.png";
-import menuCurry from "../assets/images/menu-curry.png";
+import menuChicken from "@assets/att.EkvSkwLjDBW1ODlDvD9LxFy62g3LHYLk-ov6o-AmAyQ_1775869943923.jpeg";
+import menuStew from "@assets/att.HQSPLJRNfF28v2i8Y4oH_xO7Im3GZ1e-4hCMbfyHlUk_1775869943923.jpeg";
+import menuSalmon from "@assets/att.qOSDHH62gq5NRRtaTOsXClmp7ZV4gqR2W9ulLehqcMY_1775869943923.jpeg";
+import menuStirfry from "@assets/att.o6wypxRaEioByCQGwWXcek02sBjEzj9H8bGGx8y5RQI_1775869943923.jpeg";
+import menuBbq from "@assets/att.YYNyzODCUYr-GbkJ2Nig5eg7uhaYcjBubYlMsDSVAYg_1775869943923.jpeg";
+import menuBolognese from "@assets/att.A69rdFWTe3wzITD52xuHTwgrojwY7VkksIX_4GHQRJI_1775869943923.jpeg";
+import menuShrimp from "@assets/att.VvcqNuUBwxjs3UpPbbrYE9R9cY2Sr8uFMo7ANHklVJ4_1775869943923.jpeg";
+import menuMeatballs from "@assets/att.rmF16ZLZXPQ2l38adXEuFJ76YofuI67T1r5bQiSxikc_1775869943923.jpeg";
+import menuLasagna from "@assets/att.gFpqDOtNQJBmaSYuOZv0csVId2EXKcMW5hNcbS-Nr4M_1775869943923.jpeg";
+import menuCurry from "@assets/att.7hdhp98sexptb5U1uI_eaTIHku5VtG_w7Z8Kh1QK6iY_1775869943923.jpeg";
 
 export type MenuItem = {
   id: string;

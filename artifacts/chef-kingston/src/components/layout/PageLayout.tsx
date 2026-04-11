@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { Link } from "wouter";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { useState } from "react";
+import navLogo from "@assets/att.Yeeup1CO9VY9Crw97iTvpDTiILgB9ae2yfNErH_GxAA.png_1775869943923.jpeg";
 
 function AnnouncementBar() {
   return (
@@ -28,8 +29,11 @@ function Navbar() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="flex-1 md:flex md:items-center md:gap-12">
-            <Link href="/" className="block text-primary font-serif text-xl font-bold tracking-tight">
-              Your Personal Chef<br/><span className="text-sm text-secondary font-sans font-medium uppercase tracking-widest">Kingston</span>
+            <Link href="/" className="flex items-center gap-3">
+              <img src={navLogo} alt="PCK Logo" className="h-12 w-12 rounded-md object-cover" />
+              <div className="text-primary font-serif text-xl font-bold tracking-tight leading-tight">
+                Your Personal Chef<br/><span className="text-sm text-secondary font-sans font-medium uppercase tracking-widest">Kingston</span>
+              </div>
             </Link>
           </div>
 
