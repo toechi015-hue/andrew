@@ -7,7 +7,7 @@ import bannerLogo from "@assets/att.J5mBriJkII7OGL5oPvxlZxyGMhLkpvzbH8sA1bQDX9o.
 
 function AnnouncementBar() {
   return (
-    <div className="bg-secondary text-secondary-foreground text-center py-2 px-4 text-sm font-medium w-full z-50">
+    <div className="bg-secondary text-secondary-foreground text-center py-2.5 px-4 text-sm font-medium w-full z-50">
       Fresh weekly meals available now — order early to secure your spot!
     </div>
   );
@@ -26,12 +26,12 @@ function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
+    <header className="sticky top-0 z-40 w-full bg-card/80 backdrop-blur-xl border-b border-border/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-18 items-center justify-between">
           <div className="flex-1 md:flex md:items-center md:gap-12">
             <Link href="/" className="flex items-center gap-3">
-              <img src={navLogo} alt="PCK Logo" className="h-12 w-12 rounded-md object-cover" />
+              <img src={navLogo} alt="PCK Logo" className="h-12 w-12 rounded-full object-cover shadow-md ring-2 ring-secondary/30" />
               <div className="text-primary font-serif text-xl font-bold tracking-tight leading-tight">
                 Your Personal Chef<br/><span className="text-sm text-secondary font-sans font-medium uppercase tracking-widest">Kingston</span>
               </div>
@@ -43,7 +43,7 @@ function Navbar() {
               <ul className="flex items-center gap-6 text-sm font-medium">
                 {navLinks.map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href} className="text-foreground/80 transition hover:text-secondary">
+                    <Link href={link.href} className="text-foreground/70 transition hover:text-secondary font-semibold">
                       {link.label}
                     </Link>
                   </li>
@@ -51,20 +51,18 @@ function Navbar() {
               </ul>
             </nav>
             <div className="flex items-center gap-4">
-              <div className="sm:flex sm:gap-4">
-                <a
-                  className="rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow transition hover:bg-primary/90"
-                  href="/menu"
-                >
-                  Order Now
-                </a>
-              </div>
+              <a
+                className="rounded-full bg-secondary px-6 py-2.5 text-sm font-semibold text-secondary-foreground shadow-lg shadow-secondary/20 transition hover:bg-secondary/90 hover:shadow-xl hover:shadow-secondary/30 hover:-translate-y-0.5"
+                href="/menu"
+              >
+                Order Now
+              </a>
             </div>
           </div>
 
           <div className="flex items-center gap-4 md:hidden">
             <button
-              className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
+              className="rounded-full bg-muted p-2.5 text-foreground/70 transition hover:bg-secondary/10 hover:text-secondary"
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? <X className="size-5" /> : <Menu className="size-5" />}
@@ -73,25 +71,24 @@ function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden border-t border-border">
-          <nav aria-label="Global" className="p-4 bg-background">
-            <ul className="flex flex-col gap-4 text-sm font-medium">
+        <div className="md:hidden border-t border-border/50">
+          <nav aria-label="Global" className="p-4 bg-card">
+            <ul className="flex flex-col gap-2 text-sm font-medium">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <Link 
                     href={link.href} 
-                    className="block text-foreground/80 hover:text-secondary p-2"
+                    className="block text-foreground/70 hover:text-secondary hover:bg-secondary/5 rounded-xl p-3 transition font-semibold"
                     onClick={() => setIsOpen(false)}
                   >
                     {link.label}
                   </Link>
                 </li>
               ))}
-              <li>
+              <li className="pt-2">
                 <a
-                  className="block w-full text-center rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow"
+                  className="block w-full text-center rounded-full bg-secondary px-5 py-3 text-sm font-semibold text-secondary-foreground shadow-lg"
                   href="/menu"
                   onClick={() => setIsOpen(false)}
                 >
@@ -110,14 +107,13 @@ function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center gap-4 rounded-lg bg-secondary p-6 shadow-lg sm:flex-row sm:justify-between">
-          <strong className="text-xl text-primary sm:text-xl font-serif"> Limited Weekly Spots Available </strong>
-
+        <div className="flex flex-col items-center gap-4 rounded-3xl bg-secondary p-8 shadow-xl sm:flex-row sm:justify-between">
+          <strong className="text-xl text-white sm:text-xl font-serif">Limited Weekly Spots Available</strong>
           <a
-            className="inline-flex items-center gap-2 rounded-full border border-primary bg-primary px-8 py-3 text-primary-foreground hover:bg-transparent hover:text-primary focus:outline-none focus:ring active:bg-primary/90 transition-colors"
+            className="inline-flex items-center gap-2 rounded-full border-2 border-white bg-white px-8 py-3 text-primary font-semibold hover:bg-transparent hover:text-white transition-colors"
             href="/contact"
           >
-            <span className="text-sm font-medium"> Get in Touch </span>
+            <span className="text-sm">Get in Touch</span>
           </a>
         </div>
 
@@ -127,7 +123,7 @@ function Footer() {
               <img src={bannerLogo} alt="Your Personal Chef Kingston" className="h-16 w-auto object-contain brightness-0 invert mx-auto sm:mx-0" />
             </Link>
             <p className="text-lg font-medium text-white font-serif mt-2">Your Personal Chef Kingston</p>
-            <p className="mt-2 max-w-xs mx-auto sm:mx-0 text-white/80">
+            <p className="mt-2 max-w-xs mx-auto sm:mx-0 text-white/70">
               Freshly made meals in Kingston, prepared by a Red Seal certified chef. Ready when you are.
             </p>
           </div>
@@ -135,15 +131,15 @@ function Footer() {
           <div className="text-center sm:text-left">
             <p className="text-lg font-medium text-white font-serif">Services</p>
             <ul className="mt-4 space-y-2 text-sm">
-              <li><Link href="/menu" className="text-white/80 transition hover:text-white">Weekly Menu</Link></li>
-              <li><Link href="/meal-plans" className="text-white/80 transition hover:text-white">Meal Plans</Link></li>
-              <li><Link href="/catering" className="text-white/80 transition hover:text-white">Catering & Events</Link></li>
+              <li><Link href="/menu" className="text-white/70 transition hover:text-white">Weekly Menu</Link></li>
+              <li><Link href="/meal-plans" className="text-white/70 transition hover:text-white">Meal Plans</Link></li>
+              <li><Link href="/catering" className="text-white/70 transition hover:text-white">Catering & Events</Link></li>
             </ul>
           </div>
 
           <div className="text-center sm:text-left">
             <p className="text-lg font-medium text-white font-serif">Contact</p>
-            <ul className="mt-4 space-y-2 text-sm text-white/80">
+            <ul className="mt-4 space-y-2 text-sm text-white/70">
               <li>
                 <a href="mailto:ypcdinners@gmail.com" className="transition hover:text-white">ypcdinners@gmail.com</a>
               </li>
@@ -156,7 +152,7 @@ function Footer() {
 
           <div className="text-center sm:text-left">
             <p className="text-lg font-medium text-white font-serif">Social</p>
-            <ul className="mt-4 space-y-2 text-sm text-white/80">
+            <ul className="mt-4 space-y-2 text-sm text-white/70">
               <li>
                 <a href="https://m.me/YourPersonalChefKingston" target="_blank" rel="noreferrer" className="transition hover:text-white">Facebook Messenger</a>
               </li>
@@ -167,7 +163,7 @@ function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 border-t border-white/10 pt-8 sm:flex sm:items-center sm:justify-between text-white/60">
+        <div className="mt-16 border-t border-white/10 pt-8 sm:flex sm:items-center sm:justify-between text-white/50">
           <p className="text-center text-sm sm:text-left">
             &copy; 2026 Your Personal Chef Kingston. All rights reserved.
           </p>
@@ -183,7 +179,7 @@ function FloatingWhatsApp() {
       href="https://wa.me/16472000047"
       target="_blank"
       rel="noreferrer"
-      className="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-xl hover:scale-110 transition-transform z-50 flex items-center justify-center"
+      className="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-xl shadow-[#25D366]/30 hover:scale-110 hover:shadow-2xl transition-all z-50 flex items-center justify-center"
       aria-label="Chat on WhatsApp"
     >
       <MessageCircle size={28} />

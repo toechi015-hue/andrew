@@ -35,7 +35,7 @@ See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and pa
 - **Directory**: `artifacts/chef-kingston/`
 - **Pages**: Home (`/`), Menu (`/menu`), Meal Plans (`/meal-plans`), Catering (`/catering`), About (`/about`), Contact (`/contact`)
 - **Routing**: wouter
-- **Styling**: Tailwind CSS, dark navy + gold palette, Playfair Display + Plus Jakarta Sans fonts
+- **Styling**: Tailwind CSS v4, warm cream/beige bg + warm orange accent (#secondary: 28 85% 52%) + dark navy primary, Playfair Display serif + Plus Jakarta Sans, rounded-3xl cards, pill buttons, hover lift/shadow effects
 - **Data**: Menu items in `src/data/menu.ts`, meal plans in `src/data/plans.ts`
 - **Layout**: Global layout in `src/components/layout/` (AnnouncementBar, Navbar, Footer, FloatingWhatsApp)
 - **Images**: AI-generated food and chef images in `src/assets/`

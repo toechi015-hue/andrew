@@ -50,37 +50,37 @@
 }
 
 :root {
-  --background: 210 20% 98%;
-  --foreground: 222 47% 11%;
-  --border: 214 32% 91%;
+  --background: 33 35% 95%;
+  --foreground: 20 20% 15%;
+  --border: 30 20% 87%;
   
-  --card: 0 0% 100%;
-  --card-foreground: 222 47% 11%;
-  --card-border: 214 32% 91%;
+  --card: 36 40% 98%;
+  --card-foreground: 20 20% 15%;
+  --card-border: 30 20% 87%;
   
-  --popover: 0 0% 100%;
-  --popover-foreground: 222 47% 11%;
-  --popover-border: 214 32% 91%;
+  --popover: 36 40% 98%;
+  --popover-foreground: 20 20% 15%;
+  --popover-border: 30 20% 87%;
   
-  --primary: 222 47% 11%; /* Dark Navy */
-  --primary-foreground: 210 40% 98%;
+  --primary: 222 47% 11%;
+  --primary-foreground: 40 40% 97%;
   
-  --secondary: 43 74% 49%; /* Gold Accent */
-  --secondary-foreground: 222 47% 11%;
+  --secondary: 28 85% 52%;
+  --secondary-foreground: 0 0% 100%;
   
-  --muted: 210 40% 96.1%;
-  --muted-foreground: 215.4 16.3% 46.9%;
+  --muted: 33 25% 91%;
+  --muted-foreground: 20 10% 45%;
   
-  --accent: 210 40% 96.1%;
-  --accent-foreground: 222.2 47.4% 11.2%;
+  --accent: 33 25% 91%;
+  --accent-foreground: 20 20% 15%;
   
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 210 40% 98%;
   
-  --input: 214.3 31.8% 91.4%;
-  --ring: 222.2 84% 4.9%;
+  --input: 30 20% 87%;
+  --ring: 28 85% 52%;
   
-  --radius: 0.5rem;
+  --radius: 0.75rem;
   
   --app-font-sans: ui-sans-serif, system-ui, sans-serif;
   --app-font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
@@ -103,8 +103,8 @@
   --primary: 210 40% 98%;
   --primary-foreground: 222.2 47.4% 11.2%;
   
-  --secondary: 43 74% 49%;
-  --secondary-foreground: 222.2 47.4% 11.2%;
+  --secondary: 28 85% 52%;
+  --secondary-foreground: 0 0% 100%;
   
   --muted: 217.2 32.6% 17.5%;
   --muted-foreground: 215 20.2% 65.1%;
