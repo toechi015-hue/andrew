@@ -1,4 +1,4 @@
-import menuChickenParm from "@assets/image_1775872974095.png";
+import menuChickenParm from "@assets/IMG_2243_1775873023164.jpeg";
 import menuBeefStirFry from "@assets/IMG_2239_1775871535914.jpeg";
 import menuEnchiladas from "@assets/IMG_2238_1775871535914.jpeg";
 
