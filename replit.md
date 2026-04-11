@@ -25,3 +25,19 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - `pnpm --filter @workspace/api-server run dev` — run API server locally
 
 See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and package details.
+
+## Artifacts
+
+### chef-kingston (Your Personal Chef Kingston)
+- **Type**: React + Vite (frontend-only, no backend)
+- **Preview path**: `/` (root)
+- **Package**: `@workspace/chef-kingston`
+- **Directory**: `artifacts/chef-kingston/`
+- **Pages**: Home (`/`), Menu (`/menu`), Meal Plans (`/meal-plans`), Catering (`/catering`), About (`/about`), Contact (`/contact`)
+- **Routing**: wouter
+- **Styling**: Tailwind CSS, dark navy + gold palette, Playfair Display + Plus Jakarta Sans fonts
+- **Data**: Menu items in `src/data/menu.ts`, meal plans in `src/data/plans.ts`
+- **Layout**: Global layout in `src/components/layout/` (AnnouncementBar, Navbar, Footer, FloatingWhatsApp)
+- **Images**: AI-generated food and chef images in `src/assets/`
+- **Contact**: (647) 200-0047, ypcdinners@gmail.com, WhatsApp +16472000047, Facebook: Your Personal Chef Kingston
+- **Future-ready**: Data layer in `src/data/` can connect to Supabase/CMS. Structure prepared for Stripe integration.

@@ -1,0 +1,74 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "QOHGic476OU9bWjEjJSJf"
+uri = "file://artifacts/chef-kingston/src/assets/images/menu-chicken.png"
+type = "image"
+title = "Herb-Roasted Chicken Thighs"
+
+[[generated]]
+id = "VT8gJ_hcC-8c6OPqZXT20"
+uri = "file://artifacts/chef-kingston/src/assets/images/menu-stew.png"
+type = "image"
+title = "Classic Beef Stew"
+
+[[generated]]
+id = "yAMM_F8SyHE5wFIHuSajP"
+uri = "file://artifacts/chef-kingston/src/assets/images/menu-salmon.png"
+type = "image"
+title = "Salmon & Lemon Butter"
+
+[[generated]]
+id = "CsD3oQlNNXzb4dEoPwSNb"
+uri = "file://artifacts/chef-kingston/src/assets/images/menu-stirfry.png"
+type = "image"
+title = "Vegetable Stir Fry"
+
+[[generated]]
+id = "1_XYRxvb5HSeuwaqOyCBv"
+uri = "file://artifacts/chef-kingston/src/assets/images/menu-bbq.png"
+type = "image"
+title = "Family BBQ Chicken Pack"
+
+[[generated]]
+id = "OHhtXRZKjLJi9WpFVz3i5"
+uri = "file://artifacts/chef-kingston/src/assets/images/menu-bolognese.png"
+type = "image"
+title = "Beef Bolognese Pasta"
+
+[[generated]]
+id = "lJm1AzydisIlXpSDr3VPg"
+uri = "file://artifacts/chef-kingston/src/assets/images/menu-shrimp.png"
+type = "image"
+title = "Shrimp Fried Rice"
+
+[[generated]]
+id = "njQQgUt7QkIS9ILSDj1Vl"
+uri = "file://artifacts/chef-kingston/src/assets/images/menu-meatballs.png"
+type = "image"
+title = "Lemon Herb Turkey Meatballs"
+
+[[generated]]
+id = "YMxmNbNSmNOPrctOuHWPx"
+uri = "file://artifacts/chef-kingston/src/assets/images/menu-lasagna.png"
+type = "image"
+title = "Family Lasagna Pan"
+
+[[generated]]
+id = "oRhArK6LxngGLiZ4u6iqN"
+uri = "file://artifacts/chef-kingston/src/assets/images/menu-curry.png"
+type = "image"
+title = "Coconut Chickpea Curry"
+
+[[generated]]
+id = "50PGsViTE7YJALt_FMss8"
+uri = "file://artifacts/chef-kingston/src/assets/images/hero.png"
+type = "image"
+title = "Hero banner plated food"
+
+[[generated]]
+id = "yDrzvUmyIjNgZ0wkXaiOB"
+uri = "file://artifacts/chef-kingston/src/assets/images/about-chef.png"
+type = "image"
+title = "Professional chef in kitchen"
