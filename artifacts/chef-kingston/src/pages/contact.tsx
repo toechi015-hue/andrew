@@ -115,6 +115,36 @@ export default function Contact() {
 
         </div>
       </div>
+
+      {/* Map Placeholder */}
+      <div className="bg-muted/30 border-t border-border">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <h2 className="text-2xl font-serif font-bold text-primary mb-6">Our Service Area</h2>
+          <div
+            className="w-full rounded-2xl overflow-hidden border border-border shadow-sm bg-card flex flex-col items-center justify-center gap-4 text-center"
+            style={{ height: 320 }}
+            data-testid="map-placeholder"
+          >
+            <MapPin className="w-12 h-12 text-secondary/60" />
+            <div>
+              <p className="font-serif font-bold text-primary text-xl mb-1">Kingston, Ontario, Canada</p>
+              <p className="text-muted-foreground text-sm max-w-md">
+                We proudly serve Kingston and the surrounding areas. Pickup available at our location — delivery across the city. Map coming soon.
+              </p>
+            </div>
+            <a
+              href="https://maps.google.com/?q=Kingston,Ontario,Canada"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-md bg-primary/10 text-primary border border-primary/20 px-5 py-2.5 text-sm font-semibold hover:bg-primary/20 transition-colors"
+              data-testid="link-open-maps"
+            >
+              <MapPin className="w-4 h-4" />
+              View on Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
     </PageLayout>
   );
 }
