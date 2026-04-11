@@ -72,15 +72,20 @@ export default function Menu() {
       <div className="bg-card py-16 px-4 sm:px-6 lg:px-8 text-center">
         <div className="container mx-auto max-w-4xl">
           <span className="text-secondary font-semibold text-sm uppercase tracking-wider">Fresh & Delicious</span>
-          <h1 className="text-4xl sm:text-5xl font-serif font-bold text-primary mt-2 mb-6">This Week's <span className="text-secondary italic">Menu</span></h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <h1 className="text-4xl sm:text-5xl font-serif font-bold text-primary mt-2 mb-5">This Week's <span className="text-secondary italic">Menu</span></h1>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Each meal is chef-prepared, includes 2 sides + delivery, and is priced per portion. No kids sizes — just extra leftovers.
           </p>
         </div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="flex items-center justify-end mb-8">
+        <div className="flex items-center justify-between mb-8">
+          <div className="hidden md:block">
+            <p className="text-sm text-muted-foreground">
+              Choose your meal, pick 2 sides, then send your order.
+            </p>
+          </div>
           <button
             onClick={() => setCartOpen(v => !v)}
             className="relative flex items-center gap-2 rounded-full bg-secondary text-secondary-foreground px-6 py-2.5 text-sm font-semibold shadow-lg shadow-secondary/20 hover:shadow-xl hover:-translate-y-0.5 transition-all"
@@ -97,7 +102,7 @@ export default function Menu() {
         </div>
 
         {cartOpen && (
-          <div className="mb-10 bg-card border border-border/50 rounded-3xl shadow-lg p-6" data-testid="cart-panel">
+          <div className="mb-10 bg-card border border-border/50 rounded-[2rem] shadow-lg p-6" data-testid="cart-panel">
             <h2 className="text-xl font-serif font-bold text-primary mb-4">Your Order</h2>
             {cart.length === 0 ? (
               <p className="text-muted-foreground text-sm py-4 text-center">No items added yet. Pick your sides and tap "Add to Order" below.</p>
@@ -178,7 +183,7 @@ export default function Menu() {
                   </div>
                   <p className="text-muted-foreground text-sm mb-5 flex-1">{meal.description}</p>
 
-                  <div className="mb-4">
+                  <div className="mb-5">
                     <p className="text-xs font-semibold text-foreground uppercase tracking-wider mb-2">Choose Your Sides (pick 2)</p>
                     <div className="grid grid-cols-2 gap-1.5">
                       {sides.map(side => {
@@ -224,7 +229,7 @@ export default function Menu() {
           })}
         </div>
 
-        <div className="mt-16 bg-card rounded-3xl p-8 sm:p-10 max-w-4xl mx-auto border border-border/50 shadow-sm">
+        <div className="mt-16 bg-card rounded-[2rem] p-8 sm:p-10 max-w-4xl mx-auto border border-border/50 shadow-sm">
           <div className="text-center mb-6">
             <h3 className="text-2xl font-serif font-bold text-primary mb-2">How to Order</h3>
             <p className="text-muted-foreground">Send a DM or text with:</p>

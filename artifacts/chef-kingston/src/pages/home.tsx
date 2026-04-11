@@ -30,15 +30,15 @@ export default function Home() {
     <PageLayout>
       <section className="relative overflow-hidden bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-28">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 xl:gap-20 items-center">
             <div className="order-2 lg:order-1">
-              <span className="inline-block py-1.5 px-4 rounded-full bg-secondary/15 text-secondary text-sm font-semibold tracking-wider uppercase mb-6">
+              <span className="inline-flex items-center py-1.5 px-4 rounded-full bg-secondary/15 text-secondary text-sm font-semibold tracking-wider uppercase mb-6">
                 Personal Chef & Meal Delivery
               </span>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold leading-tight mb-6 text-primary">
+              <h1 className="max-w-xl text-4xl sm:text-5xl lg:text-6xl font-serif font-bold leading-[1.02] tracking-tight mb-6 text-primary">
                 Enjoy <span className="text-secondary italic">Delicious</span> Home-Cooked Meals
               </h1>
-              <p className="text-lg text-muted-foreground mb-10 max-w-xl leading-relaxed">
+              <p className="text-lg text-muted-foreground mb-8 max-w-xl leading-relaxed">
                 Fresh ingredients, chef-prepared meals, and a passion for good food — delivered to your door or ready for pick-up in Kingston.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -67,7 +67,7 @@ export default function Home() {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="absolute -bottom-4 -right-4 bg-card rounded-2xl shadow-xl p-4 border border-border">
+                <div className="absolute -bottom-4 -right-4 bg-card rounded-2xl shadow-xl p-4 border border-border/70 backdrop-blur-sm">
                   <p className="text-xs text-muted-foreground">This week's special</p>
                   <p className="font-serif font-bold text-primary text-sm">Chicken Parm</p>
                   <p className="text-secondary font-bold">$18</p>
@@ -81,7 +81,7 @@ export default function Home() {
 
       <section className="py-20 bg-card">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-14">
             <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4">How Ordering Works</h2>
             <p className="text-muted-foreground text-lg">Gourmet meals at home, made simple.</p>
           </div>
@@ -109,7 +109,7 @@ export default function Home() {
 
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
             <div className="max-w-2xl">
               <span className="text-secondary font-semibold text-sm uppercase tracking-wider">This Week</span>
               <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mt-2 mb-4">Our Signature <span className="text-secondary italic">Dishes</span></h2>
@@ -159,7 +159,7 @@ export default function Home() {
 
       <section className="py-20 bg-card">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4">Who Is This For?</h2>
             <p className="text-muted-foreground text-lg">We cook so you don't have to.</p>
           </div>
@@ -264,7 +264,7 @@ export default function Home() {
 
       <section className="py-20 bg-card">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-12">
             <span className="text-secondary font-semibold text-sm uppercase tracking-wider">Testimonials</span>
             <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mt-2 mb-4">They Love <span className="text-secondary italic">Us</span></h2>
           </div>
@@ -299,7 +299,7 @@ export default function Home() {
 
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="max-w-2xl mx-auto bg-card rounded-3xl p-10 sm:p-14 border border-border/50 shadow-lg">
+          <div className="max-w-2xl mx-auto bg-card rounded-[2rem] p-10 sm:p-14 border border-border/50 shadow-lg">
             <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary mb-4">Don't Wait — <span className="text-secondary italic">Order Now!</span></h2>
             <p className="text-lg text-muted-foreground mb-10 max-w-lg mx-auto">
               Fresh ingredients, mouth-watering recipes, and a passion for good food delivered to your door or ready for pick-up.

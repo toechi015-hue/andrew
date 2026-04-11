@@ -7,7 +7,7 @@ import bannerLogo from "@assets/att.J5mBriJkII7OGL5oPvxlZxyGMhLkpvzbH8sA1bQDX9o.
 
 function AnnouncementBar() {
   return (
-    <div className="bg-secondary text-secondary-foreground text-center py-2.5 px-4 text-sm font-medium w-full z-50">
+    <div className="bg-secondary text-secondary-foreground text-center py-2.5 px-4 text-sm font-medium w-full z-50 tracking-wide">
       Fresh weekly meals available now — order early to secure your spot!
     </div>
   );
@@ -28,12 +28,12 @@ function Navbar() {
   return (
     <header className="sticky top-0 z-40 w-full bg-card/80 backdrop-blur-xl border-b border-border/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-18 items-center justify-between">
+        <div className="flex h-20 items-center justify-between">
           <div className="flex-1 md:flex md:items-center md:gap-12">
             <Link href="/" className="flex items-center gap-3">
               <img src={navLogo} alt="PCK Logo" className="h-12 w-12 rounded-full object-cover shadow-md ring-2 ring-secondary/30" />
               <div className="text-primary font-serif text-xl font-bold tracking-tight leading-tight">
-                Your Personal Chef<br/><span className="text-sm text-secondary font-sans font-medium uppercase tracking-widest">Kingston</span>
+                Your Personal Chef<br /><span className="text-sm text-secondary font-sans font-medium uppercase tracking-[0.22em]">Kingston</span>
               </div>
             </Link>
           </div>
@@ -107,7 +107,7 @@ function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center gap-4 rounded-3xl bg-secondary p-8 shadow-xl sm:flex-row sm:justify-between">
+        <div className="flex flex-col items-center gap-4 rounded-[2rem] bg-secondary p-8 shadow-xl sm:flex-row sm:justify-between">
           <strong className="text-xl text-white sm:text-xl font-serif">Limited Weekly Spots Available</strong>
           <a
             className="inline-flex items-center gap-2 rounded-full border-2 border-white bg-white px-8 py-3 text-primary font-semibold hover:bg-transparent hover:text-white transition-colors"
