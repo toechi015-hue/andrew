@@ -44,6 +44,7 @@ See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and pa
 - **Admin panel**: Login at `/admin`, dashboard at `/admin/dashboard`. Auth via JWT httpOnly cookie. Admin credentials seeded in DB (bcrypt hashed). Full CRUD menu management: add/edit/delete menu items and update sides directly from dashboard.
 - **AI Chatbot**: Floating chat widget (AIChatBot component) powered by Gemini AI. Dynamically reads menu from DB. Rate-limited (10 req/min per IP), input validated. API endpoint: POST `/api/chat`.
 - **Menu data**: Stored in PostgreSQL (`menu_items` + `sides` tables). Frontend fetches from GET `/api/menu`. Static images used as fallback when DB items have no imageUrl.
+- **Image upload**: Admin dashboard has photo upload for menu items. Uses GCS presigned URLs via `POST /api/storage/uploads/request-url` (admin-only, server-side MIME/size validation). Images served via `GET /api/storage/objects/*`. Upload UI in edit form with preview thumbnail.
 - **Vite proxy**: `/api` requests proxied to API server (port 8080)
 
 ### API Server
@@ -55,7 +56,8 @@ See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and pa
 - **Menu routes**: GET `/api/menu` (public), POST/PUT/DELETE `/api/admin/menu/items` (admin), PUT `/api/admin/menu/sides` (admin)
 - **Chat route**: POST `/api/chat` — Gemini AI chatbot, dynamically reads menu from DB
 - **Middleware**: `requireAdmin` JWT auth middleware for protected admin routes
-- **Dependencies**: bcrypt (native), jsonwebtoken, cookie-parser, @workspace/integrations-gemini-ai
+- **Storage routes**: POST `/api/storage/uploads/request-url` (admin-only, presigned URL), GET `/api/storage/objects/*` (serve uploaded files), GET `/api/storage/public-objects/*` (public assets)
+- **Dependencies**: bcrypt (native), jsonwebtoken, cookie-parser, @workspace/integrations-gemini-ai, @google-cloud/storage
 - **Environment**: Requires `JWT_SECRET` env var (fail-fast if missing)
 - **DB schema**: `admin_users` in `lib/db/src/schema/admin-users.ts`, `menu_items` + `sides` in `lib/db/src/schema/menu-items.ts`
 - **Seeds**: `seed-admin.ts` (requires `ADMIN_PASSWORD` env var), `seed-menu.ts` (initial menu items + sides)

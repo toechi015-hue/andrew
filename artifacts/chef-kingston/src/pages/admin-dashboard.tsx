@@ -1,8 +1,8 @@
 import { useAuth } from "../hooks/useAuth";
 import { useLocation } from "wouter";
 import { Link } from "wouter";
-import { useState, useEffect, useCallback } from "react";
-import { LogOut, UtensilsCrossed, Users, CalendarDays, MessageCircle, Home, Plus, Pencil, Trash2, Save, X, ChevronDown, ChevronUp } from "lucide-react";
+import { useState, useEffect, useCallback, useRef } from "react";
+import { LogOut, UtensilsCrossed, Users, CalendarDays, MessageCircle, Home, Plus, Pencil, Trash2, Save, X, ChevronDown, ChevronUp, Upload, ImageIcon } from "lucide-react";
 import navLogo from "@assets/att.Yeeup1CO9VY9Crw97iTvpDTiILgB9ae2yfNErH_GxAA.png_1775869943923.jpeg";
 
 type MenuItem = {
@@ -35,6 +35,8 @@ export default function AdminDashboard() {
   const [sidesExpanded, setSidesExpanded] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const [uploading, setUploading] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const fetchMenu = useCallback(async () => {
     try {
@@ -100,6 +102,52 @@ export default function AdminDashboard() {
     setEditing(null);
     setIsNew(false);
     setError("");
+  }
+
+  async function handleImageUpload(file: File) {
+    if (!editing) return;
+    if (!file.type.startsWith("image/")) {
+      showError("Please select an image file.");
+      return;
+    }
+    if (file.size > 5 * 1024 * 1024) {
+      showError("Image must be under 5MB.");
+      return;
+    }
+    setUploading(true);
+    try {
+      const urlRes = await fetch("/api/storage/uploads/request-url", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({
+          name: file.name,
+          size: file.size,
+          contentType: file.type,
+        }),
+      });
+      if (!urlRes.ok) {
+        showError("Failed to prepare upload.");
+        return;
+      }
+      const { uploadURL, objectPath } = await urlRes.json();
+      const uploadRes = await fetch(uploadURL, {
+        method: "PUT",
+        headers: { "Content-Type": file.type },
+        body: file,
+      });
+      if (!uploadRes.ok) {
+        showError("Upload failed. Please try again.");
+        return;
+      }
+      const imageUrl = `/api/storage${objectPath}`;
+      setEditing({ ...editing, imageUrl });
+      showSuccess("Image uploaded!");
+    } catch {
+      showError("Upload failed. Please try again.");
+    } finally {
+      setUploading(false);
+    }
   }
 
   async function handleSave() {
@@ -402,6 +450,49 @@ export default function AdminDashboard() {
                           className="w-full rounded-xl border border-input bg-background px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all resize-none"
                           placeholder="Describe the dish..."
                         />
+                      </div>
+                      <div className="space-y-1.5 mb-4">
+                        <label className="text-xs font-semibold text-foreground uppercase tracking-wider">Photo</label>
+                        <div className="flex items-center gap-4">
+                          {editing.imageUrl ? (
+                            <div className="relative w-20 h-20 rounded-xl overflow-hidden border border-border/40 shrink-0">
+                              <img src={editing.imageUrl} alt="Menu item" className="w-full h-full object-cover" />
+                              <button
+                                onClick={() => setEditing({ ...editing, imageUrl: "" })}
+                                className="absolute top-1 right-1 w-5 h-5 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-black/80 transition-colors"
+                                title="Remove photo"
+                              >
+                                <X className="w-3 h-3" />
+                              </button>
+                            </div>
+                          ) : (
+                            <div className="w-20 h-20 rounded-xl border-2 border-dashed border-border/60 flex items-center justify-center shrink-0 bg-muted/20">
+                              <ImageIcon className="w-6 h-6 text-muted-foreground/40" />
+                            </div>
+                          )}
+                          <div>
+                            <input
+                              ref={fileInputRef}
+                              type="file"
+                              accept="image/*"
+                              className="hidden"
+                              onChange={(e) => {
+                                const file = e.target.files?.[0];
+                                if (file) handleImageUpload(file);
+                                e.target.value = "";
+                              }}
+                            />
+                            <button
+                              onClick={() => fileInputRef.current?.click()}
+                              disabled={uploading}
+                              className="inline-flex items-center gap-2 rounded-xl border border-input bg-background px-4 py-2 text-sm font-medium text-foreground hover:bg-muted/50 transition-all disabled:opacity-50"
+                            >
+                              <Upload className="w-4 h-4" />
+                              {uploading ? "Uploading..." : editing.imageUrl ? "Change Photo" : "Upload Photo"}
+                            </button>
+                            <p className="text-[11px] text-muted-foreground mt-1">JPG, PNG, or WebP. Max 5MB.</p>
+                          </div>
+                        </div>
                       </div>
                       <div className="flex gap-2">
                         <button
