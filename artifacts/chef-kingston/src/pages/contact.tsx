@@ -24,7 +24,7 @@ export default function Contact() {
               {[
                 { icon: Phone, title: "Phone / Text", subtitle: "Call or text us directly", value: "(647) 200-0047", href: "tel:6472000047" },
                 { icon: MessageCircle, title: "WhatsApp", subtitle: "Send us a message", value: "+1 647-200-0047", href: "https://wa.me/16472000047", external: true },
-                { icon: Send, title: "Messenger", subtitle: "Message on Facebook", value: "Your Personal Chef Kingston", href: "https://m.me/YourPersonalChefKingston", external: true },
+                { icon: Send, title: "Messenger", subtitle: "Message on Facebook", value: "Your Personal Chef Kingston", href: "https://m.me/61588412791988", external: true },
                 { icon: Mail, title: "Email", subtitle: "Drop us a line", value: "ypcdinners@gmail.com", href: "mailto:ypcdinners@gmail.com" },
               ].map((item, i) => (
                 <div key={i} className="flex items-start bg-card rounded-xl p-4 border border-border/40 hover:shadow-sm transition-shadow group">

@@ -176,7 +176,7 @@ function Footer() {
             <p className="text-sm font-semibold text-white/90 uppercase tracking-wider">Connect</p>
             <ul className="mt-4 space-y-2.5 text-sm text-white/60">
               <li>
-                <a href="https://m.me/YourPersonalChefKingston" target="_blank" rel="noreferrer" className="transition hover:text-white">Facebook Messenger</a>
+                <a href="https://m.me/61588412791988" target="_blank" rel="noreferrer" className="transition hover:text-white">Facebook Messenger</a>
               </li>
               <li>
                 <a href="https://wa.me/16472000047" target="_blank" rel="noreferrer" className="transition hover:text-white">WhatsApp</a>

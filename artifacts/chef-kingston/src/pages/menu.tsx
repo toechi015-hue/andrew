@@ -138,7 +138,7 @@ export default function Menu() {
                     data-testid="button-order-whatsapp">
                     <MessageCircle className="w-4 h-4" /> WhatsApp
                   </a>
-                  <a href="https://m.me/YourPersonalChefKingston" target="_blank" rel="noreferrer"
+                  <a href="https://m.me/61588412791988" target="_blank" rel="noreferrer"
                     className="flex-1 inline-flex justify-center items-center gap-2 rounded-full bg-[#0084FF] px-5 py-2.5 text-sm font-semibold text-white shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all"
                     data-testid="button-order-messenger">
                     <MessageCircle className="w-4 h-4" /> Messenger
@@ -254,7 +254,7 @@ export default function Menu() {
               data-testid="button-whatsapp-cta">
               <MessageCircle className="w-4 h-4" /> Order via WhatsApp
             </a>
-            <a href="https://m.me/YourPersonalChefKingston" target="_blank" rel="noreferrer"
+            <a href="https://m.me/61588412791988" target="_blank" rel="noreferrer"
               className="inline-flex justify-center items-center gap-2 rounded-full bg-[#0084FF] px-5 py-2.5 text-sm font-semibold text-white shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all"
               data-testid="button-messenger-cta">
               <MessageCircle className="w-4 h-4" /> Order via Messenger

@@ -29,7 +29,7 @@ export default function AdminDashboard() {
   const quickLinks = [
     { title: "View Website", desc: "See the live site", icon: Home, href: "/", external: false },
     { title: "WhatsApp Orders", desc: "Check incoming messages", icon: MessageCircle, href: "https://wa.me/16472000047", external: true },
-    { title: "Facebook Messenger", desc: "View customer messages", icon: MessageCircle, href: "https://m.me/YourPersonalChefKingston", external: true },
+    { title: "Facebook Messenger", desc: "View customer messages", icon: MessageCircle, href: "https://m.me/61588412791988", external: true },
   ];
 
   const stats = [
