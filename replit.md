@@ -42,6 +42,7 @@ See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and pa
 - **Images**: Real food photos and chef logo in `attached_assets/` aliased as `@assets`
 - **Contact**: (647) 200-0047, ypcdinners@gmail.com, WhatsApp +16472000047, Facebook: Your Personal Chef Kingston
 - **Admin panel**: Login at `/admin`, dashboard at `/admin/dashboard`. Auth via JWT httpOnly cookie. Admin credentials seeded in DB (bcrypt hashed).
+- **AI Chatbot**: Floating chat widget (AIChatBot component) powered by Gemini AI. Answers questions about menu, pricing, ordering, and catering. Rate-limited (10 req/min per IP), input validated (20 messages max, 500 chars each). API endpoint: POST `/api/chat`.
 - **Vite proxy**: `/api` requests proxied to API server (port 8080)
 - **Future-ready**: Data layer in `src/data/` can connect to Supabase/CMS. Structure prepared for Stripe integration.
 
@@ -51,7 +52,8 @@ See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and pa
 - **Package**: `@workspace/api-server`
 - **Directory**: `artifacts/api-server/`
 - **Auth routes**: POST `/api/auth/login`, GET `/api/auth/me`, POST `/api/auth/logout`
-- **Dependencies**: bcrypt (native), jsonwebtoken, cookie-parser
+- **Chat route**: POST `/api/chat` — Gemini AI chatbot for customer Q&A (rate-limited, validated)
+- **Dependencies**: bcrypt (native), jsonwebtoken, cookie-parser, @workspace/integrations-gemini-ai
 - **Environment**: Requires `JWT_SECRET` env var (fail-fast if missing)
 - **DB schema**: `admin_users` table in `lib/db/src/schema/admin-users.ts`
 - **Seed**: `artifacts/api-server/seed-admin.ts` (requires `ADMIN_PASSWORD` env var)

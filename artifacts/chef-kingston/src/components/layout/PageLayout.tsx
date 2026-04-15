@@ -3,6 +3,7 @@ import { Link, useLocation } from "wouter";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { useState } from "react";
 import navLogo from "@assets/att.Yeeup1CO9VY9Crw97iTvpDTiILgB9ae2yfNErH_GxAA.png_1775869943923.jpeg";
+import AIChatBot from "../AIChatBot";
 
 function AnnouncementBar() {
   return (
@@ -218,6 +219,7 @@ export function PageLayout({ children }: { children: ReactNode }) {
       </main>
       <Footer />
       <FloatingWhatsApp />
+      <AIChatBot />
     </div>
   );
 }
