@@ -1,8 +1,84 @@
+import { useState } from "react";
 import { PageLayout } from "../components/layout/PageLayout";
 import imgPrivate from "@assets/att.HQSPLJRNfF28v2i8Y4oH_xO7Im3GZ1e-4hCMbfyHlUk_1775869943923.jpeg";
 import imgFamily from "@assets/att.gFpqDOtNQJBmaSYuOZv0csVId2EXKcMW5hNcbS-Nr4M_1775869943923.jpeg";
 import imgEvents from "@assets/att.YYNyzODCUYr-GbkJ2Nig5eg7uhaYcjBubYlMsDSVAYg_1775869943923.jpeg";
 import imgPrep from "@assets/att.zF1zSKs8HE67Fv1Ysn_cQNG7xuMXY-hnNeYQLjM67bU_1775869943923.jpeg";
+
+function CateringForm() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [service, setService] = useState("Private Dinner");
+  const [date, setDate] = useState("");
+  const [details, setDetails] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+
+  function buildMessage() {
+    return `Hi! I'd like to inquire about catering.\n\nName: ${name}\nEmail: ${email}\nService: ${service}\nDate: ${date}\nDetails: ${details}`;
+  }
+
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (!name || !email) return;
+    const msg = encodeURIComponent(buildMessage());
+    window.open(`https://m.me/61588412791988?text=${msg}`, "_blank");
+    setSubmitted(true);
+  }
+
+  if (submitted) {
+    return (
+      <div className="text-center py-8 space-y-4">
+        <div className="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center mx-auto">
+          <svg className="w-7 h-7 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+        </div>
+        <h3 className="text-lg font-serif font-bold text-primary">Inquiry Sent!</h3>
+        <p className="text-muted-foreground text-sm max-w-md mx-auto">Your message has been opened in Messenger. We'll get back to you shortly!</p>
+        <button onClick={() => setSubmitted(false)} className="text-secondary text-sm font-medium hover:underline">Submit another inquiry</button>
+      </div>
+    );
+  }
+
+  return (
+    <form className="space-y-5" onSubmit={handleSubmit}>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="space-y-1.5">
+          <label htmlFor="catering-name" className="text-xs font-semibold text-foreground uppercase tracking-wider">Name</label>
+          <input id="catering-name" type="text" required value={name} onChange={(e) => setName(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all" placeholder="John Doe" />
+        </div>
+        <div className="space-y-1.5">
+          <label htmlFor="catering-email" className="text-xs font-semibold text-foreground uppercase tracking-wider">Email</label>
+          <input id="catering-email" type="email" required value={email} onChange={(e) => setEmail(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all" placeholder="john@example.com" />
+        </div>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="space-y-1.5">
+          <label htmlFor="catering-service" className="text-xs font-semibold text-foreground uppercase tracking-wider">Service Type</label>
+          <select id="catering-service" value={service} onChange={(e) => setService(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all">
+            <option>Private Dinner</option>
+            <option>Family Gathering</option>
+            <option>Small Event</option>
+            <option>Weekly Home Meal Prep</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div className="space-y-1.5">
+          <label htmlFor="catering-date" className="text-xs font-semibold text-foreground uppercase tracking-wider">Estimated Date</label>
+          <input id="catering-date" type="date" value={date} onChange={(e) => setDate(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all" />
+        </div>
+      </div>
+      <div className="space-y-1.5">
+        <label htmlFor="catering-details" className="text-xs font-semibold text-foreground uppercase tracking-wider">Event Details & Dietary Needs</label>
+        <textarea id="catering-details" rows={4} value={details} onChange={(e) => setDetails(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all" placeholder="Tell us about your event..."></textarea>
+      </div>
+      <button type="submit" className="w-full rounded-full bg-secondary px-4 py-3 text-sm font-semibold text-white shadow-md shadow-secondary/20 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+        Submit Inquiry
+      </button>
+      <p className="text-[11px] text-center text-muted-foreground">
+        Or contact us directly at <a href="mailto:ypcdinners@gmail.com" className="text-secondary font-medium">ypcdinners@gmail.com</a>
+      </p>
+    </form>
+  );
+}
 
 export default function Catering() {
   const services = [
@@ -73,44 +149,7 @@ export default function Catering() {
             <p className="text-muted-foreground text-sm">Fill out the form below to start planning your perfect culinary experience.</p>
           </div>
 
-          <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              <div className="space-y-1.5">
-                <label htmlFor="catering-name" className="text-xs font-semibold text-foreground uppercase tracking-wider">Name</label>
-                <input id="catering-name" type="text" className="w-full rounded-xl border border-input bg-background px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all" placeholder="John Doe" />
-              </div>
-              <div className="space-y-1.5">
-                <label htmlFor="catering-email" className="text-xs font-semibold text-foreground uppercase tracking-wider">Email</label>
-                <input id="catering-email" type="email" className="w-full rounded-xl border border-input bg-background px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all" placeholder="john@example.com" />
-              </div>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              <div className="space-y-1.5">
-                <label htmlFor="catering-service" className="text-xs font-semibold text-foreground uppercase tracking-wider">Service Type</label>
-                <select id="catering-service" className="w-full rounded-xl border border-input bg-background px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all">
-                  <option>Private Dinner</option>
-                  <option>Family Gathering</option>
-                  <option>Small Event</option>
-                  <option>Weekly Home Meal Prep</option>
-                  <option>Other</option>
-                </select>
-              </div>
-              <div className="space-y-1.5">
-                <label htmlFor="catering-date" className="text-xs font-semibold text-foreground uppercase tracking-wider">Estimated Date</label>
-                <input id="catering-date" type="date" className="w-full rounded-xl border border-input bg-background px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all" />
-              </div>
-            </div>
-            <div className="space-y-1.5">
-              <label htmlFor="catering-details" className="text-xs font-semibold text-foreground uppercase tracking-wider">Event Details & Dietary Needs</label>
-              <textarea id="catering-details" rows={4} className="w-full rounded-xl border border-input bg-background px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all" placeholder="Tell us about your event..."></textarea>
-            </div>
-            <button type="button" className="w-full rounded-full bg-secondary px-4 py-3 text-sm font-semibold text-white shadow-md shadow-secondary/20 hover:shadow-lg hover:-translate-y-0.5 transition-all">
-              Submit Inquiry
-            </button>
-            <p className="text-[11px] text-center text-muted-foreground">
-              Or contact us directly at <a href="mailto:ypcdinners@gmail.com" className="text-secondary font-medium">ypcdinners@gmail.com</a>
-            </p>
-          </form>
+          <CateringForm />
         </div>
       </div>
     </PageLayout>
