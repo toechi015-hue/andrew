@@ -1,5 +1,62 @@
+import { useState } from "react";
 import { PageLayout } from "../components/layout/PageLayout";
 import { Phone, Mail, MapPin, MessageCircle, Send } from "lucide-react";
+
+function ContactForm() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (!name || !email || !message) return;
+    const subject = encodeURIComponent(`New message from ${name} - Your Personal Chef Kingston`);
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone || "Not provided"}\n\nMessage:\n${message}`);
+    window.location.href = `mailto:ypcdinners@gmail.com?subject=${subject}&body=${body}`;
+    setSubmitted(true);
+  }
+
+  if (submitted) {
+    return (
+      <div className="text-center py-8 space-y-4">
+        <div className="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center mx-auto">
+          <svg className="w-7 h-7 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+        </div>
+        <h3 className="text-lg font-serif font-bold text-primary">Opening your email app...</h3>
+        <p className="text-muted-foreground text-sm max-w-md mx-auto">Your message details have been pre-filled. Just hit send in your email app!</p>
+        <button onClick={() => setSubmitted(false)} className="text-secondary text-sm font-medium hover:underline">Send another message</button>
+      </div>
+    );
+  }
+
+  return (
+    <form className="space-y-4" onSubmit={handleSubmit}>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="space-y-1.5">
+          <label htmlFor="contact-name" className="text-xs font-semibold text-foreground uppercase tracking-wider">Name</label>
+          <input id="contact-name" type="text" required value={name} onChange={(e) => setName(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all" placeholder="Your Name" />
+        </div>
+        <div className="space-y-1.5">
+          <label htmlFor="contact-email" className="text-xs font-semibold text-foreground uppercase tracking-wider">Email</label>
+          <input id="contact-email" type="email" required value={email} onChange={(e) => setEmail(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all" placeholder="your@email.com" />
+        </div>
+      </div>
+      <div className="space-y-1.5">
+        <label htmlFor="contact-phone" className="text-xs font-semibold text-foreground uppercase tracking-wider">Phone (Optional)</label>
+        <input id="contact-phone" type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all" placeholder="(555) 123-4567" />
+      </div>
+      <div className="space-y-1.5">
+        <label htmlFor="contact-message" className="text-xs font-semibold text-foreground uppercase tracking-wider">Message</label>
+        <textarea id="contact-message" rows={5} required value={message} onChange={(e) => setMessage(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all" placeholder="How can we help you?"></textarea>
+      </div>
+      <button type="submit" className="w-full rounded-full bg-secondary px-4 py-3 text-sm font-semibold text-white shadow-md shadow-secondary/20 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+        Send Message
+      </button>
+    </form>
+  );
+}
 
 export default function Contact() {
   return (
@@ -57,29 +114,7 @@ export default function Contact() {
           <div className="lg:col-span-3">
             <div className="bg-card border border-border/40 shadow-sm rounded-2xl p-6 sm:p-7">
               <h2 className="text-xl font-serif font-bold text-primary mb-5">Send a Message</h2>
-              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="space-y-1.5">
-                    <label htmlFor="contact-name" className="text-xs font-semibold text-foreground uppercase tracking-wider">Name</label>
-                    <input id="contact-name" type="text" className="w-full rounded-xl border border-input bg-background px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all" placeholder="Your Name" />
-                  </div>
-                  <div className="space-y-1.5">
-                    <label htmlFor="contact-email" className="text-xs font-semibold text-foreground uppercase tracking-wider">Email</label>
-                    <input id="contact-email" type="email" className="w-full rounded-xl border border-input bg-background px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all" placeholder="your@email.com" />
-                  </div>
-                </div>
-                <div className="space-y-1.5">
-                  <label htmlFor="contact-phone" className="text-xs font-semibold text-foreground uppercase tracking-wider">Phone (Optional)</label>
-                  <input id="contact-phone" type="tel" className="w-full rounded-xl border border-input bg-background px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all" placeholder="(555) 123-4567" />
-                </div>
-                <div className="space-y-1.5">
-                  <label htmlFor="contact-message" className="text-xs font-semibold text-foreground uppercase tracking-wider">Message</label>
-                  <textarea id="contact-message" rows={5} className="w-full rounded-xl border border-input bg-background px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all" placeholder="How can we help you?"></textarea>
-                </div>
-                <button type="button" className="w-full rounded-full bg-secondary px-4 py-3 text-sm font-semibold text-white shadow-md shadow-secondary/20 hover:shadow-lg hover:-translate-y-0.5 transition-all">
-                  Send Message
-                </button>
-              </form>
+              <ContactForm />
             </div>
           </div>
         </div>
