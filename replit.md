@@ -35,9 +35,10 @@ See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and pa
 - **Directory**: `artifacts/chef-kingston/`
 - **Pages**: Home (`/`), Menu (`/menu`), Meal Plans (`/meal-plans`), Catering (`/catering`), About (`/about`), Contact (`/contact`)
 - **Routing**: wouter
-- **Styling**: Tailwind CSS v4, warm cream/beige bg + warm orange accent (#secondary: 28 85% 52%) + dark navy primary, Playfair Display serif + Plus Jakarta Sans, rounded-3xl cards, pill buttons, hover lift/shadow effects
+- **Styling**: Tailwind CSS v4, warm cream/beige bg + warm orange accent (#secondary: 28 85% 52%) + dark navy primary, Playfair Display serif + Plus Jakarta Sans, rounded-2xl cards, pill buttons, hover lift/shadow effects, gradient overlays on food images, subtle decorative blurs, masonry-style gallery
 - **Data**: Menu items in `src/data/menu.ts`, meal plans in `src/data/plans.ts`
-- **Layout**: Global layout in `src/components/layout/` (AnnouncementBar, Navbar, Footer, FloatingWhatsApp)
-- **Images**: AI-generated food and chef images in `src/assets/`
+- **Layout**: Global layout in `src/components/layout/` (gradient AnnouncementBar, Navbar with active link highlighting via useLocation, Footer with gradient CTA banner, FloatingWhatsApp)
+- **Accessibility**: Form labels bound with htmlFor/id, aria-pressed on menu side-selection buttons, aria-label/aria-expanded on mobile nav toggle
+- **Images**: Real food photos and chef logo in `attached_assets/` aliased as `@assets`
 - **Contact**: (647) 200-0047, ypcdinners@gmail.com, WhatsApp +16472000047, Facebook: Your Personal Chef Kingston
 - **Future-ready**: Data layer in `src/data/` can connect to Supabase/CMS. Structure prepared for Stripe integration.

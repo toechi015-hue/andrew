@@ -34,30 +34,30 @@ export default function Catering() {
 
   return (
     <PageLayout>
-      <div className="bg-card py-16 px-4 sm:px-6 lg:px-8 text-center">
+      <div className="bg-card py-14 px-4 sm:px-6 lg:px-8 text-center">
         <div className="container mx-auto max-w-4xl">
-          <span className="text-secondary font-semibold text-sm uppercase tracking-wider">Services</span>
-          <h1 className="text-4xl sm:text-5xl font-serif font-bold text-primary mt-2 mb-6">Catering & <span className="text-secondary italic">Personal Chef</span></h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <span className="text-secondary font-semibold text-xs uppercase tracking-wider">Services</span>
+          <h1 className="text-4xl sm:text-5xl font-serif font-bold text-primary mt-2 mb-4">Catering & <span className="text-secondary italic">Personal Chef</span></h1>
+          <p className="text-muted-foreground max-w-xl mx-auto leading-relaxed">
             Bring the Michelin-star training and restaurant experience to your home or event.
           </p>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-20">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="space-y-6 mb-16">
           {services.map((service, idx) => (
-            <div key={idx} className="group bg-card rounded-3xl overflow-hidden border border-border/50 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all">
-              <div className="aspect-[16/9] overflow-hidden">
+            <div key={idx} className={`group bg-card rounded-2xl overflow-hidden border border-border/40 shadow-sm hover:shadow-md transition-all grid grid-cols-1 lg:grid-cols-2 ${idx % 2 === 1 ? "lg:direction-rtl" : ""}`}>
+              <div className={`aspect-[16/10] lg:aspect-auto overflow-hidden ${idx % 2 === 1 ? "lg:order-2" : ""}`}>
                 <img src={service.image} alt={service.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
-              <div className="p-8">
-                <h2 className="text-2xl font-serif font-bold text-primary mb-4">{service.title}</h2>
-                <p className="text-muted-foreground mb-6">{service.description}</p>
+              <div className={`p-7 sm:p-8 flex flex-col justify-center ${idx % 2 === 1 ? "lg:order-1" : ""}`}>
+                <h2 className="text-2xl font-serif font-bold text-primary mb-3">{service.title}</h2>
+                <p className="text-muted-foreground mb-5 leading-relaxed">{service.description}</p>
                 <ul className="space-y-2">
                   {service.features.map((feature, i) => (
-                    <li key={i} className="flex items-center text-sm font-medium text-foreground">
-                      <span className="w-2 h-2 rounded-full bg-secondary mr-3"></span>
+                    <li key={i} className="flex items-center text-sm text-foreground">
+                      <span className="w-1.5 h-1.5 rounded-full bg-secondary mr-3 shrink-0"></span>
                       {feature}
                     </li>
                   ))}
@@ -67,27 +67,27 @@ export default function Catering() {
           ))}
         </div>
 
-        <div className="bg-card rounded-3xl p-8 md:p-12 max-w-4xl mx-auto border border-border/50 shadow-sm">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-serif font-bold text-primary mb-4">Inquire About Your <span className="text-secondary italic">Event</span></h2>
-            <p className="text-muted-foreground">Fill out the form below to start planning your perfect culinary experience.</p>
+        <div className="bg-card rounded-2xl p-7 md:p-10 max-w-3xl mx-auto border border-border/40 shadow-sm">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl font-serif font-bold text-primary mb-3">Inquire About Your <span className="text-secondary italic">Event</span></h2>
+            <p className="text-muted-foreground text-sm">Fill out the form below to start planning your perfect culinary experience.</p>
           </div>
-          
-          <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground">Name</label>
-                <input type="text" className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/30 focus:border-secondary" placeholder="John Doe" />
+
+          <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div className="space-y-1.5">
+                <label htmlFor="catering-name" className="text-xs font-semibold text-foreground uppercase tracking-wider">Name</label>
+                <input id="catering-name" type="text" className="w-full rounded-xl border border-input bg-background px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all" placeholder="John Doe" />
               </div>
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground">Email</label>
-                <input type="email" className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/30 focus:border-secondary" placeholder="john@example.com" />
+              <div className="space-y-1.5">
+                <label htmlFor="catering-email" className="text-xs font-semibold text-foreground uppercase tracking-wider">Email</label>
+                <input id="catering-email" type="email" className="w-full rounded-xl border border-input bg-background px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all" placeholder="john@example.com" />
               </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground">Service Type</label>
-                <select className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/30 focus:border-secondary">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div className="space-y-1.5">
+                <label htmlFor="catering-service" className="text-xs font-semibold text-foreground uppercase tracking-wider">Service Type</label>
+                <select id="catering-service" className="w-full rounded-xl border border-input bg-background px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all">
                   <option>Private Dinner</option>
                   <option>Family Gathering</option>
                   <option>Small Event</option>
@@ -95,19 +95,19 @@ export default function Catering() {
                   <option>Other</option>
                 </select>
               </div>
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground">Estimated Date</label>
-                <input type="date" className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/30 focus:border-secondary" />
+              <div className="space-y-1.5">
+                <label htmlFor="catering-date" className="text-xs font-semibold text-foreground uppercase tracking-wider">Estimated Date</label>
+                <input id="catering-date" type="date" className="w-full rounded-xl border border-input bg-background px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all" />
               </div>
             </div>
-            <div className="space-y-2">
-              <label className="text-sm font-medium text-foreground">Event Details & Dietary Needs</label>
-              <textarea rows={4} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/30 focus:border-secondary" placeholder="Tell us about your event..."></textarea>
+            <div className="space-y-1.5">
+              <label htmlFor="catering-details" className="text-xs font-semibold text-foreground uppercase tracking-wider">Event Details & Dietary Needs</label>
+              <textarea id="catering-details" rows={4} className="w-full rounded-xl border border-input bg-background px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all" placeholder="Tell us about your event..."></textarea>
             </div>
-            <button type="button" className="w-full rounded-full bg-secondary px-4 py-3.5 text-sm font-semibold text-secondary-foreground shadow-lg shadow-secondary/20 hover:shadow-xl hover:-translate-y-0.5 transition-all">
+            <button type="button" className="w-full rounded-full bg-secondary px-4 py-3 text-sm font-semibold text-white shadow-md shadow-secondary/20 hover:shadow-lg hover:-translate-y-0.5 transition-all">
               Submit Inquiry
             </button>
-            <p className="text-xs text-center text-muted-foreground mt-4">
+            <p className="text-[11px] text-center text-muted-foreground">
               Or contact us directly at <a href="mailto:ypcdinners@gmail.com" className="text-secondary font-medium">ypcdinners@gmail.com</a>
             </p>
           </form>

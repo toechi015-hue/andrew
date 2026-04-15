@@ -69,32 +69,30 @@ export default function Menu() {
 
   return (
     <PageLayout>
-      <div className="bg-card py-16 px-4 sm:px-6 lg:px-8 text-center">
+      <div className="bg-card py-14 px-4 sm:px-6 lg:px-8 text-center">
         <div className="container mx-auto max-w-4xl">
-          <span className="text-secondary font-semibold text-sm uppercase tracking-wider">Fresh & Delicious</span>
-          <h1 className="text-4xl sm:text-5xl font-serif font-bold text-primary mt-2 mb-5">This Week's <span className="text-secondary italic">Menu</span></h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Each meal is chef-prepared, includes 2 sides + delivery, and is priced per portion. No kids sizes — just extra leftovers.
+          <span className="text-secondary font-semibold text-xs uppercase tracking-wider">Fresh & Delicious</span>
+          <h1 className="text-4xl sm:text-5xl font-serif font-bold text-primary mt-2 mb-4">This Week's <span className="text-secondary italic">Menu</span></h1>
+          <p className="text-muted-foreground max-w-xl mx-auto leading-relaxed">
+            Chef-prepared, includes 2 sides + delivery, priced per portion. No kids sizes — just extra leftovers.
           </p>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="flex items-center justify-between mb-8">
-          <div className="hidden md:block">
-            <p className="text-sm text-muted-foreground">
-              Choose your meal, pick 2 sides, then send your order.
-            </p>
-          </div>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div className="flex items-center justify-between mb-6">
+          <p className="text-xs text-muted-foreground hidden md:block">
+            Choose your meal, pick 2 sides, then send your order.
+          </p>
           <button
             onClick={() => setCartOpen(v => !v)}
-            className="relative flex items-center gap-2 rounded-full bg-secondary text-secondary-foreground px-6 py-2.5 text-sm font-semibold shadow-lg shadow-secondary/20 hover:shadow-xl hover:-translate-y-0.5 transition-all"
+            className="relative flex items-center gap-2 rounded-full bg-secondary text-white px-5 py-2 text-sm font-semibold shadow-md shadow-secondary/20 hover:shadow-lg hover:-translate-y-0.5 transition-all"
             data-testid="button-open-cart"
           >
             <ShoppingBag className="w-4 h-4" />
             My Order
             {totalItems > 0 && (
-              <span className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-primary text-primary-foreground text-xs font-bold flex items-center justify-center" data-testid="cart-count">
+              <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-primary text-primary-foreground text-[10px] font-bold flex items-center justify-center" data-testid="cart-count">
                 {totalItems}
               </span>
             )}
@@ -102,96 +100,97 @@ export default function Menu() {
         </div>
 
         {cartOpen && (
-          <div className="mb-10 bg-card border border-border/50 rounded-[2rem] shadow-lg p-6" data-testid="cart-panel">
-            <h2 className="text-xl font-serif font-bold text-primary mb-4">Your Order</h2>
+          <div className="mb-8 bg-card border border-border/40 rounded-2xl shadow-md p-5" data-testid="cart-panel">
+            <h2 className="text-lg font-serif font-bold text-primary mb-4">Your Order</h2>
             {cart.length === 0 ? (
-              <p className="text-muted-foreground text-sm py-4 text-center">No items added yet. Pick your sides and tap "Add to Order" below.</p>
+              <p className="text-muted-foreground text-sm py-3 text-center">No items added yet. Pick your sides and tap "Add to Order" below.</p>
             ) : (
               <>
-                <ul className="divide-y divide-border mb-6">
+                <ul className="divide-y divide-border/50 mb-5">
                   {cart.map(item => (
-                    <li key={item.id} className="flex items-start gap-4 py-4" data-testid={`cart-item-${item.id}`}>
-                      <img src={item.image} alt={item.name} className="w-14 h-14 rounded-xl object-cover shrink-0" />
+                    <li key={item.id} className="flex items-start gap-3 py-3" data-testid={`cart-item-${item.id}`}>
+                      <img src={item.image} alt={item.name} className="w-12 h-12 rounded-lg object-cover shrink-0" />
                       <div className="flex-1 min-w-0">
                         <p className="font-semibold text-foreground text-sm truncate">{item.name}</p>
                         <p className="text-secondary font-bold text-sm">{item.price}</p>
                         {item.selectedSides.length > 0 && (
-                          <p className="text-xs text-muted-foreground mt-1">Sides: {item.selectedSides.join(", ")}</p>
+                          <p className="text-xs text-muted-foreground mt-0.5">Sides: {item.selectedSides.join(", ")}</p>
                         )}
                       </div>
-                      <div className="flex items-center gap-2 pt-1">
-                        <button onClick={() => updateQty(item.id, -1)} className="w-7 h-7 rounded-full border border-border flex items-center justify-center hover:bg-muted transition-colors">
+                      <div className="flex items-center gap-1.5 pt-0.5">
+                        <button onClick={() => updateQty(item.id, -1)} className="w-6 h-6 rounded-full border border-border/60 flex items-center justify-center hover:bg-muted transition-colors">
                           <Minus className="w-3 h-3" />
                         </button>
-                        <span className="w-6 text-center text-sm font-bold">{item.quantity}</span>
-                        <button onClick={() => updateQty(item.id, 1)} className="w-7 h-7 rounded-full border border-border flex items-center justify-center hover:bg-muted transition-colors">
+                        <span className="w-5 text-center text-sm font-bold">{item.quantity}</span>
+                        <button onClick={() => updateQty(item.id, 1)} className="w-6 h-6 rounded-full border border-border/60 flex items-center justify-center hover:bg-muted transition-colors">
                           <Plus className="w-3 h-3" />
                         </button>
                         <button onClick={() => removeFromCart(item.id)} className="ml-1 text-muted-foreground hover:text-destructive transition-colors">
-                          <Trash2 className="w-4 h-4" />
+                          <Trash2 className="w-3.5 h-3.5" />
                         </button>
                       </div>
                     </li>
                   ))}
                 </ul>
-                <div className="flex flex-col sm:flex-row gap-3">
+                <div className="flex flex-col sm:flex-row gap-2.5">
                   <a href={`https://wa.me/16472000047?text=${buildOrderMessage()}`} target="_blank" rel="noreferrer"
-                    className="flex-1 inline-flex justify-center items-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-sm font-semibold text-white shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
+                    className="flex-1 inline-flex justify-center items-center gap-2 rounded-full bg-[#25D366] px-5 py-2.5 text-sm font-semibold text-white shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all"
                     data-testid="button-order-whatsapp">
-                    <MessageCircle className="w-4 h-4" /> Send Order via WhatsApp
+                    <MessageCircle className="w-4 h-4" /> WhatsApp
                   </a>
                   <a href="https://m.me/YourPersonalChefKingston" target="_blank" rel="noreferrer"
-                    className="flex-1 inline-flex justify-center items-center gap-2 rounded-full bg-[#0084FF] px-5 py-3 text-sm font-semibold text-white shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
+                    className="flex-1 inline-flex justify-center items-center gap-2 rounded-full bg-[#0084FF] px-5 py-2.5 text-sm font-semibold text-white shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all"
                     data-testid="button-order-messenger">
-                    <MessageCircle className="w-4 h-4" /> Send Order via Messenger
+                    <MessageCircle className="w-4 h-4" /> Messenger
                   </a>
                 </div>
-                <p className="text-xs text-muted-foreground mt-3 text-center">
-                  Clicking sends your selections to us. We'll confirm availability, pricing, and delivery details.
+                <p className="text-[11px] text-muted-foreground mt-2.5 text-center">
+                  We'll confirm availability, pricing, and delivery details.
                 </p>
               </>
             )}
           </div>
         )}
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {menuItems.map((meal, idx) => {
             const qty = getCartQty(meal.id);
             const selectedForMeal = sideSelections[meal.id] || [];
             return (
               <div
                 key={meal.id}
-                className="group bg-card rounded-3xl overflow-hidden shadow-sm border border-border/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
-                style={{ animationDelay: `${idx * 80}ms` }}
+                className="group bg-card rounded-2xl overflow-hidden shadow-sm border border-border/40 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col"
                 data-testid={`meal-card-${meal.id}`}
               >
                 <div className="aspect-[4/3] overflow-hidden relative">
                   <img src={meal.image} alt={meal.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute top-4 left-4 flex flex-wrap gap-2">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+                  <div className="absolute top-3 left-3 flex flex-wrap gap-1.5">
                     {meal.tags.map(tag => (
-                      <span key={tag} className="bg-card/90 backdrop-blur-sm text-foreground text-xs font-semibold px-3 py-1.5 rounded-full shadow-sm">{tag}</span>
+                      <span key={tag} className="bg-white/90 backdrop-blur-sm text-foreground text-[11px] font-semibold px-2.5 py-1 rounded-full">{tag}</span>
                     ))}
                   </div>
                 </div>
-                <div className="p-6 flex flex-col flex-1">
-                  <div className="flex justify-between items-start mb-3 gap-4">
-                    <h3 className="font-serif font-bold text-xl text-primary leading-tight">{meal.name}</h3>
+                <div className="p-5 flex flex-col flex-1">
+                  <div className="flex justify-between items-start mb-2 gap-3">
+                    <h3 className="font-serif font-bold text-lg text-primary leading-snug">{meal.name}</h3>
                     <div className="text-right whitespace-nowrap">
-                      <span className="font-bold text-2xl text-secondary">{meal.price}</span>
-                      <span className="text-xs text-muted-foreground block">{meal.priceDetail}</span>
+                      <span className="font-bold text-xl text-secondary">{meal.price}</span>
+                      <span className="text-[11px] text-muted-foreground block">{meal.priceDetail}</span>
                     </div>
                   </div>
-                  <p className="text-muted-foreground text-sm mb-5 flex-1">{meal.description}</p>
+                  <p className="text-muted-foreground text-sm mb-4 flex-1 leading-relaxed">{meal.description}</p>
 
-                  <div className="mb-5">
-                    <p className="text-xs font-semibold text-foreground uppercase tracking-wider mb-2">Choose Your Sides (pick 2)</p>
+                  <div className="mb-4">
+                    <p className="text-[11px] font-semibold text-foreground uppercase tracking-wider mb-2">Pick 2 sides</p>
                     <div className="grid grid-cols-2 gap-1.5">
                       {sides.map(side => {
                         const isSelected = selectedForMeal.includes(side);
                         return (
                           <button key={side} onClick={() => toggleSide(meal.id, side)}
-                            className={`text-left text-xs px-2.5 py-1.5 rounded-full border transition-all flex items-center gap-1.5 ${
-                              isSelected ? "border-secondary bg-secondary/10 text-secondary font-semibold" : "border-border text-muted-foreground hover:border-secondary/40"
+                            aria-pressed={isSelected}
+                            className={`text-left text-[11px] px-2.5 py-1.5 rounded-lg border transition-all flex items-center gap-1.5 ${
+                              isSelected ? "border-secondary bg-secondary/8 text-secondary font-semibold" : "border-border/60 text-muted-foreground hover:border-secondary/30"
                             }`}>
                             {isSelected && <Check className="w-3 h-3 shrink-0" />}
                             {side}
@@ -201,10 +200,10 @@ export default function Menu() {
                     </div>
                   </div>
 
-                  <div className="pt-4 border-t border-border">
+                  <div className="pt-3 border-t border-border/50">
                     {qty === 0 ? (
                       <button onClick={() => addToCart(meal)}
-                        className="w-full inline-flex justify-center items-center gap-2 rounded-full bg-secondary px-4 py-2.5 text-sm font-semibold text-secondary-foreground shadow-lg shadow-secondary/20 hover:shadow-xl hover:-translate-y-0.5 transition-all"
+                        className="w-full inline-flex justify-center items-center gap-2 rounded-full bg-secondary px-4 py-2.5 text-sm font-semibold text-white shadow-md shadow-secondary/20 hover:shadow-lg hover:-translate-y-0.5 transition-all"
                         data-testid={`button-add-to-order-${meal.id}`}>
                         <Plus className="w-4 h-4" /> Add to Order
                       </button>
@@ -214,12 +213,14 @@ export default function Menu() {
                           <button onClick={() => updateQty(meal.id, -1)} className="w-8 h-8 rounded-full bg-muted flex items-center justify-center hover:bg-muted/80 transition-colors">
                             <Minus className="w-4 h-4" />
                           </button>
-                          <span className="w-8 text-center font-bold text-primary">{qty}</span>
-                          <button onClick={() => updateQty(meal.id, 1)} className="w-8 h-8 rounded-full bg-secondary text-secondary-foreground flex items-center justify-center hover:bg-secondary/90 transition-colors">
+                          <span className="w-6 text-center font-bold text-primary">{qty}</span>
+                          <button onClick={() => updateQty(meal.id, 1)} className="w-8 h-8 rounded-full bg-secondary text-white flex items-center justify-center hover:bg-secondary/90 transition-colors">
                             <Plus className="w-4 h-4" />
                           </button>
                         </div>
-                        <span className="text-sm font-semibold text-secondary">Added</span>
+                        <span className="text-sm font-semibold text-secondary flex items-center gap-1">
+                          <Check className="w-3.5 h-3.5" /> Added
+                        </span>
                       </div>
                     )}
                   </div>
@@ -229,32 +230,32 @@ export default function Menu() {
           })}
         </div>
 
-        <div className="mt-16 bg-card rounded-[2rem] p-8 sm:p-10 max-w-4xl mx-auto border border-border/50 shadow-sm">
-          <div className="text-center mb-6">
-            <h3 className="text-2xl font-serif font-bold text-primary mb-2">How to Order</h3>
-            <p className="text-muted-foreground">Send a DM or text with:</p>
+        <div className="mt-14 bg-card rounded-2xl p-7 sm:p-8 max-w-3xl mx-auto border border-border/40 shadow-sm">
+          <div className="text-center mb-5">
+            <h3 className="text-xl font-serif font-bold text-primary mb-1">How to Order</h3>
+            <p className="text-muted-foreground text-sm">Send a DM or text with:</p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
             {[
               { step: "1", label: "Your meal choices" },
               { step: "2", label: "Quantity" },
               { step: "3", label: "Side selections" },
             ].map(item => (
               <div key={item.step} className="flex items-center gap-3 justify-center sm:justify-start">
-                <div className="w-9 h-9 rounded-full bg-secondary/15 text-secondary flex items-center justify-center font-bold text-sm shrink-0">{item.step}</div>
+                <div className="w-8 h-8 rounded-full bg-secondary/10 text-secondary flex items-center justify-center font-bold text-xs shrink-0">{item.step}</div>
                 <span className="text-foreground font-medium text-sm">{item.label}</span>
               </div>
             ))}
           </div>
-          <p className="text-center text-muted-foreground text-sm mb-6">Delivered straight to your door. Heat, eat, enjoy.</p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <p className="text-center text-muted-foreground text-xs mb-5">Delivered straight to your door. Heat, eat, enjoy.</p>
+          <div className="flex flex-col sm:flex-row justify-center gap-3">
             <a href="https://wa.me/16472000047" target="_blank" rel="noreferrer"
-              className="inline-flex justify-center items-center gap-2 rounded-full bg-[#25D366] px-6 py-3 text-sm font-semibold text-white shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
+              className="inline-flex justify-center items-center gap-2 rounded-full bg-[#25D366] px-5 py-2.5 text-sm font-semibold text-white shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all"
               data-testid="button-whatsapp-cta">
               <MessageCircle className="w-4 h-4" /> Order via WhatsApp
             </a>
             <a href="https://m.me/YourPersonalChefKingston" target="_blank" rel="noreferrer"
-              className="inline-flex justify-center items-center gap-2 rounded-full bg-[#0084FF] px-6 py-3 text-sm font-semibold text-white shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
+              className="inline-flex justify-center items-center gap-2 rounded-full bg-[#0084FF] px-5 py-2.5 text-sm font-semibold text-white shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all"
               data-testid="button-messenger-cta">
               <MessageCircle className="w-4 h-4" /> Order via Messenger
             </a>
