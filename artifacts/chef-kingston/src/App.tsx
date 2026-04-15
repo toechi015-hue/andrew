@@ -10,6 +10,8 @@ import MealPlans from "@/pages/meal-plans";
 import Catering from "@/pages/catering";
 import About from "@/pages/about";
 import Contact from "@/pages/contact";
+import AdminLogin from "@/pages/admin-login";
+import AdminDashboard from "@/pages/admin-dashboard";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +24,8 @@ function Router() {
       <Route path="/catering" component={Catering} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
+      <Route path="/admin" component={AdminLogin} />
+      <Route path="/admin/dashboard" component={AdminDashboard} />
       <Route component={NotFound} />
     </Switch>
   );
