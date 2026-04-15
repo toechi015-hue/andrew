@@ -9,23 +9,31 @@ function ContactForm() {
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
+  function getMailtoUrl() {
+    const subject = encodeURIComponent(`New message from ${name} - Your Personal Chef Kingston`);
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone || "Not provided"}\n\nMessage:\n${message}`);
+    return `mailto:ypcdinners@gmail.com?subject=${subject}&body=${body}`;
+  }
+
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!name || !email || !message) return;
-    const subject = encodeURIComponent(`New message from ${name} - Your Personal Chef Kingston`);
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone || "Not provided"}\n\nMessage:\n${message}`);
-    window.location.href = `mailto:ypcdinners@gmail.com?subject=${subject}&body=${body}`;
     setSubmitted(true);
   }
 
   if (submitted) {
+    const mailtoUrl = getMailtoUrl();
     return (
       <div className="text-center py-8 space-y-4">
         <div className="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center mx-auto">
-          <svg className="w-7 h-7 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+          <Mail className="w-7 h-7 text-green-600" />
         </div>
-        <h3 className="text-lg font-serif font-bold text-primary">Opening your email app...</h3>
-        <p className="text-muted-foreground text-sm max-w-md mx-auto">Your message details have been pre-filled. Just hit send in your email app!</p>
+        <h3 className="text-lg font-serif font-bold text-primary">Your message is ready!</h3>
+        <p className="text-muted-foreground text-sm max-w-md mx-auto">Click the button below to open your email app with the message pre-filled.</p>
+        <a href={mailtoUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-secondary px-6 py-3 text-sm font-semibold text-white shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all">
+          <Mail className="w-4 h-4" /> Open Email App
+        </a>
+        <p className="text-muted-foreground text-xs">Or email us directly at <a href="mailto:ypcdinners@gmail.com" className="text-secondary font-medium">ypcdinners@gmail.com</a></p>
         <button onClick={() => setSubmitted(false)} className="text-secondary text-sm font-medium hover:underline">Send another message</button>
       </div>
     );
