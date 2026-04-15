@@ -3,7 +3,6 @@ import { Link, useLocation } from "wouter";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { useState } from "react";
 import navLogo from "@assets/att.Yeeup1CO9VY9Crw97iTvpDTiILgB9ae2yfNErH_GxAA.png_1775869943923.jpeg";
-import bannerLogo from "@assets/att.J5mBriJkII7OGL5oPvxlZxyGMhLkpvzbH8sA1bQDX9o.png_1775869943923.jpeg";
 
 function AnnouncementBar() {
   return (
@@ -142,7 +141,7 @@ function Footer() {
         <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div className="text-center sm:text-left">
             <Link href="/" className="inline-block mb-4">
-              <img src={bannerLogo} alt="Your Personal Chef Kingston" className="h-14 w-auto object-contain brightness-0 invert mx-auto sm:mx-0" />
+              <img src={navLogo} alt="Your Personal Chef Kingston" className="h-14 w-14 rounded-full object-cover ring-2 ring-white/20 mx-auto sm:mx-0" />
             </Link>
             <p className="text-base font-medium text-white font-serif mt-2">Your Personal Chef Kingston</p>
             <p className="mt-2 max-w-xs mx-auto sm:mx-0 text-white/60 text-sm leading-relaxed">
