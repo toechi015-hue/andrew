@@ -21,20 +21,65 @@ function ContactForm() {
     setSubmitted(true);
   }
 
+  const [copied, setCopied] = useState<string | null>(null);
+
+  function copyToClipboard(text: string, label: string) {
+    navigator.clipboard.writeText(text).then(() => {
+      setCopied(label);
+      setTimeout(() => setCopied(null), 2000);
+    });
+  }
+
   if (submitted) {
     const mailtoUrl = getMailtoUrl();
+    const recipientEmail = "ypcdinners@gmail.com";
+    const subjectText = `New message from ${name} - Your Personal Chef Kingston`;
+    const bodyText = `Name: ${name}\nEmail: ${email}\nPhone: ${phone || "Not provided"}\n\nMessage:\n${message}`;
+
     return (
-      <div className="text-center py-8 space-y-4">
-        <div className="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center mx-auto">
-          <Mail className="w-7 h-7 text-green-600" />
+      <div className="space-y-5">
+        <div className="text-center space-y-2">
+          <div className="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center mx-auto">
+            <Mail className="w-7 h-7 text-green-600" />
+          </div>
+          <h3 className="text-lg font-serif font-bold text-primary">Your message is ready!</h3>
+          <p className="text-muted-foreground text-sm">Use one of the options below to send your message.</p>
         </div>
-        <h3 className="text-lg font-serif font-bold text-primary">Your message is ready!</h3>
-        <p className="text-muted-foreground text-sm max-w-md mx-auto">Click the button below to open your email app with the message pre-filled.</p>
-        <a href={mailtoUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-secondary px-6 py-3 text-sm font-semibold text-white shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all">
-          <Mail className="w-4 h-4" /> Open Email App
-        </a>
-        <p className="text-muted-foreground text-xs">Or email us directly at <a href="mailto:ypcdinners@gmail.com" className="text-secondary font-medium">ypcdinners@gmail.com</a></p>
-        <button onClick={() => setSubmitted(false)} className="text-secondary text-sm font-medium hover:underline">Send another message</button>
+
+        <div className="flex flex-col sm:flex-row gap-3">
+          <a href={mailtoUrl} className="flex-1 inline-flex justify-center items-center gap-2 rounded-full bg-secondary px-5 py-3 text-sm font-semibold text-white shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all">
+            <Mail className="w-4 h-4" /> Open Email App
+          </a>
+          <button onClick={() => copyToClipboard(recipientEmail, "email")} className="flex-1 inline-flex justify-center items-center gap-2 rounded-full border-2 border-secondary px-5 py-3 text-sm font-semibold text-secondary hover:bg-secondary/5 transition-all">
+            {copied === "email" ? "Copied!" : "Copy Email Address"}
+          </button>
+          <button onClick={() => copyToClipboard(`Subject: ${subjectText}\n\n${bodyText}`, "message")} className="flex-1 inline-flex justify-center items-center gap-2 rounded-full border-2 border-secondary px-5 py-3 text-sm font-semibold text-secondary hover:bg-secondary/5 transition-all">
+            {copied === "message" ? "Copied!" : "Copy Message"}
+          </button>
+        </div>
+
+        <div className="bg-muted/40 rounded-xl border border-border/40 p-4 space-y-3 text-sm">
+          <div>
+            <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">To</span>
+            <p className="text-foreground font-medium mt-0.5">{recipientEmail}</p>
+          </div>
+          <div>
+            <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Subject</span>
+            <p className="text-foreground font-medium mt-0.5">{subjectText}</p>
+          </div>
+          <div>
+            <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Message</span>
+            <p className="text-foreground mt-0.5 whitespace-pre-wrap">{bodyText}</p>
+          </div>
+        </div>
+
+        <p className="text-[11px] text-center text-muted-foreground italic">
+          If the email app doesn't open in preview, test on the published site or copy the details manually.
+        </p>
+
+        <div className="text-center">
+          <button onClick={() => { setSubmitted(false); setCopied(null); }} className="text-secondary text-sm font-medium hover:underline">Send another message</button>
+        </div>
       </div>
     );
   }
