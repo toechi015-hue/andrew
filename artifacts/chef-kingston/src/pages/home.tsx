@@ -9,7 +9,7 @@ import gallery3 from "@assets/att.o6wypxRaEioByCQGwWXcek02sBjEzj9H8bGGx8y5RQI_17
 import gallery4 from "@assets/att.A69rdFWTe3wzITD52xuHTwgrojwY7VkksIX_4GHQRJI_1775869943923.jpeg";
 import gallery5 from "@assets/att.VvcqNuUBwxjs3UpPbbrYE9R9cY2Sr8uFMo7ANHklVJ4_1775869943923.jpeg";
 import gallery6 from "@assets/att.YYNyzODCUYr-GbkJ2Nig5eg7uhaYcjBubYlMsDSVAYg_1775869943923.jpeg";
-import gallery7 from "@assets/IMG_2437_1776269896631.jpeg";
+import gallery7 from "@assets/47c46ebf-97c4-4ac3-92d2-cb1d5b43eb79_1776270077781.jpeg";
 import gallery8 from "@assets/64623fe8-c173-4fc9-bdb3-62695b6264df_1776269707231.jpeg";
 
 const galleryImages = [
@@ -19,7 +19,7 @@ const galleryImages = [
   { src: gallery4, alt: "Beef stir fry" },
   { src: gallery5, alt: "Crispy chicken with dipping sauce" },
   { src: gallery6, alt: "Grilled vegetables" },
-  { src: gallery7, alt: "Chef's meals collage" },
+  { src: gallery7, alt: "Chicken parm fresh from the oven" },
   { src: gallery8, alt: "Crispy orange beef with rice" },
 ];
 
