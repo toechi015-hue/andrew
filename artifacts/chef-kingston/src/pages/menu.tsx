@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { PageLayout } from "../components/layout/PageLayout";
-import { menuItems, sides, MenuItem } from "../data/menu";
+import { useMenu, type MenuItemDisplay } from "../hooks/useMenu";
 import { ShoppingBag, Plus, Minus, Trash2, MessageCircle, Check } from "lucide-react";
 
-type CartItem = MenuItem & { quantity: number; selectedSides: string[] };
+type CartItem = MenuItemDisplay & { quantity: number; selectedSides: string[] };
 
 export default function Menu() {
+  const { items: menuItems, sides, loading } = useMenu();
   const [cart, setCart] = useState<CartItem[]>([]);
   const [cartOpen, setCartOpen] = useState(false);
   const [sideSelections, setSideSelections] = useState<Record<string, string[]>>({});
@@ -25,7 +26,7 @@ export default function Menu() {
     });
   }
 
-  function addToCart(meal: MenuItem) {
+  function addToCart(meal: MenuItemDisplay) {
     const selected = sideSelections[meal.id] || [];
     setCart(prev => {
       const existing = prev.find(c => c.id === meal.id);
@@ -149,6 +150,12 @@ export default function Menu() {
                 </p>
               </>
             )}
+          </div>
+        )}
+
+        {loading && (
+          <div className="text-center py-12">
+            <p className="text-muted-foreground text-sm">Loading menu...</p>
           </div>
         )}
 

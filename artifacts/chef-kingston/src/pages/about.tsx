@@ -44,6 +44,10 @@ export default function About() {
           </div>
 
           <div className="lg:col-span-3 space-y-8">
+            <div className="mb-2">
+              <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary">Chef Andrew Rossi</h2>
+            </div>
+
             <blockquote className="relative border-l-4 border-secondary pl-6 py-2">
               <p className="text-lg sm:text-xl font-serif italic text-primary leading-relaxed">
                 "I know firsthand how busy life gets — and how exhausting it can be to think about dinner every day. That's where I come in."

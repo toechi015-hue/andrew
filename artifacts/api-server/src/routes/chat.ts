@@ -1,6 +1,8 @@
 import { Router } from "express";
 import type { Request, Response } from "express";
 import { ai } from "@workspace/integrations-gemini-ai";
+import { db, menuItemsTable, sidesTable } from "@workspace/db";
+import { asc } from "drizzle-orm";
 
 const router = Router();
 
@@ -39,7 +41,7 @@ setInterval(() => {
   }
 }, 60_000);
 
-const SYSTEM_PROMPT = `You are the friendly AI assistant for "Your Personal Chef Kingston" — a personal chef and meal delivery service in Kingston, Ontario, run by a Red Seal certified chef with 25+ years of experience.
+const SYSTEM_PROMPT_BASE = `You are the friendly AI assistant for "Your Personal Chef Kingston" — a personal chef and meal delivery service in Kingston, Ontario, run by Chef Andrew Rossi, a Red Seal certified chef with 25+ years of experience.
 
 KEY BUSINESS INFO:
 - Phone: (647) 200-0047
@@ -48,14 +50,6 @@ KEY BUSINESS INFO:
 - Facebook: https://www.facebook.com/profile.php?id=61588412791988
 - Service Area: Kingston, Ontario, Canada
 - Order via: Facebook DM, WhatsApp, text, or phone call
-
-THIS WEEK'S MENU (includes 2 sides + delivery, priced per portion):
-1. Chicken Parm with Homemade Tomato Sauce — $18 (Chicken)
-2. Crispy Orange Soy Glazed Beef Stir Fry — $18 (Beef)
-3. Sweet Potato Enchiladas — $16 (Vegetarian)
-
-AVAILABLE SIDES (pick 2 with each meal):
-Roasted Potatoes, Steamed Rice, Buttered Pasta, Garlic Greens, Vegetable Medley, Honey Butter Glazed Carrots
 
 MEAL PLANS:
 - Starter Plan: 3 meals/week — great for trying us out
@@ -86,6 +80,25 @@ RULES:
 - Never make up prices or menu items not listed above
 - If unsure, direct them to message on Facebook or WhatsApp
 - Only answer questions related to the business, menu, ordering, and catering. For unrelated topics, politely redirect.`;
+
+async function buildSystemPrompt(): Promise<string> {
+  try {
+    const items = await db.select().from(menuItemsTable).orderBy(asc(menuItemsTable.sortOrder));
+    const sides = await db.select().from(sidesTable).orderBy(asc(sidesTable.sortOrder));
+
+    const menuSection = items.length > 0
+      ? `THIS WEEK'S MENU (includes 2 sides + delivery, priced per portion):\n${items.map((item, i) => `${i + 1}. ${item.name} — $${item.price}${item.tags ? ` (${item.tags})` : ""}`).join("\n")}`
+      : "THIS WEEK'S MENU: No items currently available. Tell the customer to check back soon!";
+
+    const sidesSection = sides.length > 0
+      ? `AVAILABLE SIDES (pick 2 with each meal):\n${sides.map((s) => s.name).join(", ")}`
+      : "";
+
+    return `${SYSTEM_PROMPT_BASE}\n\n${menuSection}\n\n${sidesSection}`;
+  } catch {
+    return SYSTEM_PROMPT_BASE;
+  }
+}
 
 router.post("/chat", async (req: Request, res: Response) => {
   try {
@@ -124,12 +137,14 @@ router.post("/chat", async (req: Request, res: Response) => {
       parts: [{ text: m.content }],
     }));
 
+    const systemPrompt = await buildSystemPrompt();
+
     const response = await ai.models.generateContent({
       model: "gemini-2.5-flash",
       contents: chatMessages,
       config: {
         maxOutputTokens: 512,
-        systemInstruction: SYSTEM_PROMPT,
+        systemInstruction: systemPrompt,
       },
     });
 

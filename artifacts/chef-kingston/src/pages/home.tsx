@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { PageLayout } from "../components/layout/PageLayout";
-import { menuItems } from "../data/menu";
+import { useMenu } from "../hooks/useMenu";
 import heroImg from "@assets/att.zF1zSKs8HE67Fv1Ysn_cQNG7xuMXY-hnNeYQLjM67bU_1775869943923.jpeg";
 import aboutImg from "@assets/att.He80MLl2WKJIpBo865cw2_TJW-lTG6BDeJQ-TINd5m8_1775869943923.jpeg";
 import gallery1 from "@assets/att.HQSPLJRNfF28v2i8Y4oH_xO7Im3GZ1e-4hCMbfyHlUk_1775869943923.jpeg";
@@ -24,7 +24,8 @@ const galleryImages = [
 ];
 
 export default function Home() {
-  const featuredMeals = menuItems.slice(0, 3);
+  const { items } = useMenu();
+  const featuredMeals = items.slice(0, 3);
 
   return (
     <PageLayout>

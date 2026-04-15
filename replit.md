@@ -41,10 +41,10 @@ See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and pa
 - **Accessibility**: Form labels bound with htmlFor/id, aria-pressed on menu side-selection buttons, aria-label/aria-expanded on mobile nav toggle
 - **Images**: Real food photos and chef logo in `attached_assets/` aliased as `@assets`
 - **Contact**: (647) 200-0047, ypcdinners@gmail.com, WhatsApp +16472000047, Facebook: Your Personal Chef Kingston
-- **Admin panel**: Login at `/admin`, dashboard at `/admin/dashboard`. Auth via JWT httpOnly cookie. Admin credentials seeded in DB (bcrypt hashed).
-- **AI Chatbot**: Floating chat widget (AIChatBot component) powered by Gemini AI. Answers questions about menu, pricing, ordering, and catering. Rate-limited (10 req/min per IP), input validated (20 messages max, 500 chars each). API endpoint: POST `/api/chat`.
+- **Admin panel**: Login at `/admin`, dashboard at `/admin/dashboard`. Auth via JWT httpOnly cookie. Admin credentials seeded in DB (bcrypt hashed). Full CRUD menu management: add/edit/delete menu items and update sides directly from dashboard.
+- **AI Chatbot**: Floating chat widget (AIChatBot component) powered by Gemini AI. Dynamically reads menu from DB. Rate-limited (10 req/min per IP), input validated. API endpoint: POST `/api/chat`.
+- **Menu data**: Stored in PostgreSQL (`menu_items` + `sides` tables). Frontend fetches from GET `/api/menu`. Static images used as fallback when DB items have no imageUrl.
 - **Vite proxy**: `/api` requests proxied to API server (port 8080)
-- **Future-ready**: Data layer in `src/data/` can connect to Supabase/CMS. Structure prepared for Stripe integration.
 
 ### API Server
 - **Type**: Express 5 API
@@ -52,8 +52,10 @@ See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and pa
 - **Package**: `@workspace/api-server`
 - **Directory**: `artifacts/api-server/`
 - **Auth routes**: POST `/api/auth/login`, GET `/api/auth/me`, POST `/api/auth/logout`
-- **Chat route**: POST `/api/chat` — Gemini AI chatbot for customer Q&A (rate-limited, validated)
+- **Menu routes**: GET `/api/menu` (public), POST/PUT/DELETE `/api/admin/menu/items` (admin), PUT `/api/admin/menu/sides` (admin)
+- **Chat route**: POST `/api/chat` — Gemini AI chatbot, dynamically reads menu from DB
+- **Middleware**: `requireAdmin` JWT auth middleware for protected admin routes
 - **Dependencies**: bcrypt (native), jsonwebtoken, cookie-parser, @workspace/integrations-gemini-ai
 - **Environment**: Requires `JWT_SECRET` env var (fail-fast if missing)
-- **DB schema**: `admin_users` table in `lib/db/src/schema/admin-users.ts`
-- **Seed**: `artifacts/api-server/seed-admin.ts` (requires `ADMIN_PASSWORD` env var)
+- **DB schema**: `admin_users` in `lib/db/src/schema/admin-users.ts`, `menu_items` + `sides` in `lib/db/src/schema/menu-items.ts`
+- **Seeds**: `seed-admin.ts` (requires `ADMIN_PASSWORD` env var), `seed-menu.ts` (initial menu items + sides)
