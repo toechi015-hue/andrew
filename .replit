@@ -43,3 +43,4 @@ externalPort = 3001
 
 [userenv.shared]
 JWT_SECRET = "49d40d92a1567e6354c9501a2ceb7b91b3dd06df69b7b20e0a8b1d0fbf684761"
+ADMIN_PASSWORD = "raasi235#"
