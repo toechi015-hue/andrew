@@ -35,6 +35,7 @@ function ContactForm() {
     const recipientEmail = "ypcdinners@gmail.com";
     const subjectText = `New message from ${name} - Your Personal Chef Kingston`;
     const bodyText = `Name: ${name}\nEmail: ${email}\nPhone: ${phone || "Not provided"}\n\nMessage:\n${message}`;
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${recipientEmail}&su=${encodeURIComponent(subjectText)}&body=${encodeURIComponent(bodyText)}`;
 
     return (
       <div className="space-y-5">
@@ -46,14 +47,17 @@ function ContactForm() {
           <p className="text-muted-foreground text-sm">Use one of the options below to send your message.</p>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-3">
-          <a href={mailtoUrl} className="flex-1 inline-flex justify-center items-center gap-2 rounded-full bg-secondary px-5 py-3 text-sm font-semibold text-white shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all">
-            <Mail className="w-4 h-4" /> Open Email App
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <a href={mailtoUrl} className="inline-flex justify-center items-center gap-2 rounded-full bg-secondary px-4 py-3 text-sm font-semibold text-white shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all">
+            <Mail className="w-4 h-4" /> Email App
           </a>
-          <button onClick={() => copyToClipboard(recipientEmail, "email")} className="flex-1 inline-flex justify-center items-center gap-2 rounded-full border-2 border-secondary px-5 py-3 text-sm font-semibold text-secondary hover:bg-secondary/5 transition-all">
-            {copied === "email" ? "Copied!" : "Copy Email Address"}
+          <a href={gmailUrl} target="_blank" rel="noreferrer" className="inline-flex justify-center items-center gap-2 rounded-full border-2 border-secondary px-4 py-3 text-sm font-semibold text-secondary hover:bg-secondary/5 transition-all">
+            <Mail className="w-4 h-4" /> Open Gmail
+          </a>
+          <button onClick={() => copyToClipboard(recipientEmail, "email")} className="inline-flex justify-center items-center gap-2 rounded-full border-2 border-border px-4 py-3 text-sm font-semibold text-foreground/70 hover:bg-muted/50 transition-all">
+            {copied === "email" ? "Copied!" : "Copy Email"}
           </button>
-          <button onClick={() => copyToClipboard(`Subject: ${subjectText}\n\n${bodyText}`, "message")} className="flex-1 inline-flex justify-center items-center gap-2 rounded-full border-2 border-secondary px-5 py-3 text-sm font-semibold text-secondary hover:bg-secondary/5 transition-all">
+          <button onClick={() => copyToClipboard(`Subject: ${subjectText}\n\n${bodyText}`, "message")} className="inline-flex justify-center items-center gap-2 rounded-full border-2 border-border px-4 py-3 text-sm font-semibold text-foreground/70 hover:bg-muted/50 transition-all">
             {copied === "message" ? "Copied!" : "Copy Message"}
           </button>
         </div>
@@ -74,7 +78,7 @@ function ContactForm() {
         </div>
 
         <p className="text-[11px] text-center text-muted-foreground italic">
-          If the email app doesn't open in preview, test on the published site or copy the details manually.
+          If the email app doesn't open, use "Open Gmail" or copy the message manually.
         </p>
 
         <div className="text-center">

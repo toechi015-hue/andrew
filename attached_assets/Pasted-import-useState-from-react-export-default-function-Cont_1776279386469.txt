@@ -1,0 +1,94 @@
+import { useState } from "react";
+
+export default function ContactSuccess() {
+  const email = "ypcdinners@gmail.com";
+  const subject = "New message from prashnat yogi - Your Personal Chef Kingston";
+
+  const message = `Name: prashnat yogi
+Email: prasantyogi13@gmail.com
+Phone: 4376677264
+
+Message:
+HI`;
+
+  const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+
+  const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+
+  const copyToClipboard = (text) => {
+    navigator.clipboard.writeText(text);
+    alert("Copied!");
+  };
+
+  return (
+    <div style={{ padding: "20px", maxWidth: "600px", margin: "auto" }}>
+      <h2>Your message is ready!</h2>
+      <p>Use one of the options below to send your message.</p>
+
+      <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", marginBottom: "20px" }}>
+        
+        {/* OPEN EMAIL APP */}
+        <a href={mailtoLink}>
+          <button style={btnPrimary}>Open Email App</button>
+        </a>
+
+        {/* OPEN GMAIL (BEST FALLBACK) */}
+        <a href={gmailLink} target="_blank">
+          <button style={btnSecondary}>Open Gmail</button>
+        </a>
+
+        {/* COPY EMAIL */}
+        <button onClick={() => copyToClipboard(email)} style={btnOutline}>
+          Copy Email
+        </button>
+
+        {/* COPY MESSAGE */}
+        <button onClick={() => copyToClipboard(message)} style={btnOutline}>
+          Copy Message
+        </button>
+      </div>
+
+      <div style={box}>
+        <p><strong>TO:</strong> {email}</p>
+        <p><strong>SUBJECT:</strong> {subject}</p>
+        <pre style={{ whiteSpace: "pre-wrap" }}>{message}</pre>
+      </div>
+
+      <p style={{ marginTop: "15px", fontSize: "12px", color: "#666" }}>
+        If the email app doesn’t open, use "Open Gmail" or copy the message manually.
+      </p>
+    </div>
+  );
+}
+
+const btnPrimary = {
+  background: "#ff7a00",
+  color: "#fff",
+  border: "none",
+  padding: "10px 15px",
+  borderRadius: "8px",
+  cursor: "pointer"
+};
+
+const btnSecondary = {
+  background: "#fff",
+  color: "#ff7a00",
+  border: "2px solid #ff7a00",
+  padding: "10px 15px",
+  borderRadius: "8px",
+  cursor: "pointer"
+};
+
+const btnOutline = {
+  background: "#fff",
+  border: "1px solid #ccc",
+  padding: "10px 15px",
+  borderRadius: "8px",
+  cursor: "pointer"
+};
+
+const box = {
+  background: "#f5f5f5",
+  padding: "15px",
+  borderRadius: "10px"
+};
