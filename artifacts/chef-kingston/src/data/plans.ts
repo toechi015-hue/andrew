@@ -24,12 +24,12 @@ export const mealPlans: PlanTier[] = [
   {
     id: "family-plan",
     name: "Family Plan",
-    price: "$120",
+    price: "$150",
     frequency: "/ week",
     features: [
-      "10 meals per week",
-      "Serves family of 4",
-      "Kid-friendly options",
+      "12 meals per week",
+      "4 portions x 3 dinner options",
+      "Serves the whole family",
       "Delivery included in Kingston"
     ],
     recommendedFor: "Busy families wanting healthy, homestyle dinners without the prep."

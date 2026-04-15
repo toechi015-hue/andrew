@@ -52,7 +52,7 @@ export default function About() {
 
             <div className="space-y-5 text-muted-foreground leading-relaxed">
               <p>
-                Originally from St. John's, Newfoundland, I've spent over two decades perfecting my craft in the restaurant industry. My journey took me through Culinary Management at Georgian College and Culinary Arts at George Brown College, laying the foundation for a career built on precision and passion.
+                Originally from Toronto, I've spent over two decades perfecting my craft in the restaurant industry. My journey took me through Culinary Management at Georgian College and Culinary Arts at George Brown College, laying the foundation for a career built on precision and passion.
               </p>
               <p>
                 My training culminated in a <strong className="text-foreground">Michelin-star restaurant in Italy</strong>, where I learned the profound respect for ingredients that defines authentic Italian cooking. Returning to Canada, I spent years leading fine dining establishments in downtown Toronto, managing business casual kitchens, and executing large-scale banquets.

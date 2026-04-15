@@ -91,7 +91,7 @@ export default function Catering() {
     {
       title: "Family Gatherings",
       description: "Large batch fresh cooking for any occasion. Spend time with your family instead of stuck in the kitchen.",
-      features: ["Family-style platters", "Buffet setups", "Kid-friendly options", "Dietary accommodations"],
+      features: ["Family-style platters", "Buffet setups", "Dietary accommodations", "Customizable menus"],
       image: imgFamily,
     },
     {

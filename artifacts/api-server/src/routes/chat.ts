@@ -59,7 +59,7 @@ Roasted Potatoes, Steamed Rice, Buttered Pasta, Garlic Greens, Vegetable Medley,
 
 MEAL PLANS:
 - Starter Plan: 3 meals/week — great for trying us out
-- Family Plan: 5 meals/week — most popular for families
+- Family Plan: $150/week — 12 meals (4 portions x 3 dinner options), most popular for families
 - Full Plan: 7 meals/week — complete weekly coverage
 
 SERVICES:

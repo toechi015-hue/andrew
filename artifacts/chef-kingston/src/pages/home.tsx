@@ -187,7 +187,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
-              { title: "Busy Families", desc: "Healthy home-style dinners that are kid-friendly. Reclaim your stress-free weeknights and spend more time together.", emoji: "👨‍👩‍👧‍👦" },
+              { title: "Busy Families", desc: "Healthy home-style dinners the whole family will love. Reclaim your stress-free weeknights and spend more time together.", emoji: "👨‍👩‍👧‍👦" },
               { title: "Professionals", desc: "Fresh portioned meals perfectly sized for one. Save time on cooking and cleanup while eating better than takeout.", emoji: "🧑‍💼" },
               { title: "Students", desc: "Better than fast food, affordable, and filling. Just heat, eat, and get back to your studies.", emoji: "🎓" }
             ].map((item, i) => (
