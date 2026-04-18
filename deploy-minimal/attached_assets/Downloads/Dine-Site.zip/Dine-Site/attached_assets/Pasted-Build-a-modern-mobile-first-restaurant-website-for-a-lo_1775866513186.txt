@@ -1,0 +1,127 @@
+Build a modern, mobile-first restaurant website for a local food business called “Your Personal Chef Kingston”.
+
+BUSINESS TYPE:
+A Kingston, Ontario based personal chef and ready-to-eat meal delivery service. The business offers freshly made meals for busy people, families, students, and working professionals.
+
+GOAL:
+Create a premium-looking website that helps visitors:
+1. understand the service quickly
+2. browse meals/services
+3. place an order or request a weekly meal plan
+4. contact the business easily through phone, WhatsApp, Messenger, or a contact form
+
+STYLE:
+Elegant, clean, warm, local, appetizing, and trustworthy.
+Use a premium food brand look with dark navy, gold accents, white backgrounds, and high-quality food imagery.
+The UI should feel modern and smooth, not overly fancy, and must be easy to use on mobile.
+
+BRAND DETAILS:
+Business name: Your Personal Chef Kingston
+Location: Kingston, Ontario, Canada
+Phone: (647) 200-0047
+WhatsApp: +1 647-200-0047
+Facebook/Messenger: Your Personal Chef Kingston
+
+PAGES TO BUILD:
+1. Home
+2. Menu / Meals
+3. Weekly Meal Plans
+4. Catering / Personal Chef Services
+5. About Us
+6. Contact / Order Now
+
+HOME PAGE SECTIONS:
+- Hero section with headline:
+  “Freshly Made Meals in Kingston — Ready When You Are”
+- Subheadline:
+  “Busy day? We’ve got dinner covered. Enjoy delicious, freshly prepared meals made with care.”
+- Primary CTA buttons:
+  “Order Now”
+  “View Menu”
+- Featured meals section with cards
+- How it works section:
+  Choose meals → Place your order → We prepare fresh → Pickup or delivery
+- Why choose us section:
+  Fresh ingredients, homemade quality, local service, convenient ordering
+- Testimonials section
+- Weekly meal plan promotion banner
+- Contact CTA at bottom
+
+MENU PAGE:
+- Beautiful food cards with image, title, short description, price, dietary tags
+- Filters for:
+  Chicken, Beef, Vegetarian, Seafood, Family Meals, High Protein
+- “Add to order” button UI
+- Clean layout that can later connect to a real backend
+
+WEEKLY MEAL PLAN PAGE:
+- Show 3 pricing tiers:
+  Basic Plan
+  Family Plan
+  Custom Plan
+- Include sample benefits:
+  fresh meals, time-saving, customizable portions, local delivery/pickup
+- CTA: “Request My Plan”
+
+CATERING / PERSONAL CHEF PAGE:
+- Explain services for:
+  small events
+  family gatherings
+  private dinners
+  weekly home meal prep
+- Include inquiry form
+
+ABOUT PAGE:
+- Tell a warm local story about homemade food, convenience, and serving the Kingston community
+- Make it feel personal and trustworthy
+
+CONTACT PAGE:
+- Phone number
+- WhatsApp contact button
+- Messenger button
+- Address / service area in Kingston
+- Contact form with:
+  name, phone, email, service needed, message
+- Embedded map placeholder
+
+FUNCTIONALITY:
+- Fully responsive design
+- Sticky mobile nav
+- Smooth scrolling
+- Working contact form UI
+- CTA buttons for call, WhatsApp, and Messenger
+- SEO-friendly structure
+- Fast-loading layout
+- Reusable components
+- Clean code structure
+
+TECH STACK:
+Use Next.js + TypeScript + Tailwind CSS.
+Create reusable components and a polished modern layout.
+Use placeholder food images that can easily be replaced later.
+Prepare the structure so it can later connect to Stripe, a CMS, or Supabase.
+
+DESIGN DETAILS:
+- Colors:
+  dark navy
+  gold accent
+  white / light gray backgrounds
+- Rounded cards
+- Soft shadows
+- Premium typography
+- Mouth-watering hero imagery
+- Smooth hover effects
+- Strong mobile experience first
+
+EXTRA:
+Add a floating WhatsApp button on mobile.
+Add a top announcement bar for specials:
+“Fresh weekly meals available now — order early!”
+Add a simple admin-friendly structure so menu items can be edited later.
+
+COPY TONE:
+Friendly, local, welcoming, premium but simple.
+
+IMPORTANT:
+Do not make it look like a generic template.
+Make it feel like a real local Kingston food brand.

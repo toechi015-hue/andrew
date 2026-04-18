@@ -1,0 +1,8 @@
+{
+  "buildCommand": "cd artifacts/chef-kingston && pnpm run build",
+  "outputDirectory": "artifacts/chef-kingston/dist/public",
+  "installCommand": "pnpm install",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

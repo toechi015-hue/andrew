@@ -1,0 +1,9 @@
+{
+  "buildCommand": "pnpm --filter @workspace/chef-kingston run build",
+  "outputDirectory": "artifacts/chef-kingston/dist/public",
+  "installCommand": "pnpm install",
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/index.ts" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

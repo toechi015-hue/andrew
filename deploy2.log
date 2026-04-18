@@ -1,0 +1,198 @@
+> [debug] [2026-04-18T22:47:19.268Z] Found config in file "C:\Users\Prashant\Downloads\Dine-Site.zip\Dine-Site\vercel.json"
+> [debug] [2026-04-18T22:47:19.269Z] Vercel CLI 51.5.1
+> [debug] [2026-04-18T22:47:19.275Z] Agent/TTY/nonInteractive: isAgent=false agentName=none stdin.isTTY=true --non-interactive=false explicitFalse=false => nonInteractive=false
+> [debug] [2026-04-18T22:47:19.276Z] user supplied known subcommand: "deploy"
+> [debug] [2026-04-18T22:47:19.319Z] Setting target to production
+> [debug] [2026-04-18T22:47:19.329Z] Spinner invoked (Retrieving project…) with a 1000ms delay
+> [debug] [2026-04-18T22:47:19.331Z] Valid access token, skipping token refresh.
+> [debug] [2026-04-18T22:47:19.364Z] #1 → GET https://api.vercel.com/teams/team_4UgDAFiYDSNcxuE4PprjBFty?teamId=team_eoBValXnu6aDsidhqwkEv5PR
+> [debug] [2026-04-18T22:47:19.366Z] #2 → GET https://api.vercel.com/v9/projects/prj_HZoLW5nUjoNYGSbdJUQmVIWvkjiv?teamId=team_4UgDAFiYDSNcxuE4PprjBFty
+> [debug] [2026-04-18T22:47:19.644Z] #1 ← 200 OK: sfo1::jflbv-1776552440109-68c6bf0f513a [279ms]
+> [debug] [2026-04-18T22:47:19.668Z] #2 ← 200 OK: sfo1::md72g-1776552440109-dcf25be41c96 [302ms]
+> [debug] [2026-04-18T22:47:19.779Z] Spinner invoked (Deploying yo-dc2e33e2/dine-site) with a 0ms delay
+[client-debug] 2026-04-18T22:47:19.779Z Creating deployment...
+[client-debug] 2026-04-18T22:47:19.779Z Provided 'path' is a directory.
+[client-debug] 2026-04-18T22:47:19.782Z Found 26 rules in .vercelignore
+[client-debug] 2026-04-18T22:47:19.782Z Building file tree...
+[client-debug] 2026-04-18T22:47:20.625Z Found 33690 files in the specified directory
+[client-debug] 2026-04-18T22:47:20.625Z Packing tarball
+[client-debug] 2026-04-18T22:47:38.800Z Packed tarball into 2 chunks
+[client-debug] 2026-04-18T22:47:38.866Z Yielding a 'hashes-calculated' event with 2 hashes
+> [debug] [2026-04-18T22:47:38.870Z] #3 → GET https://api.vercel.com/v9/projects/dine-site?teamId=team_4UgDAFiYDSNcxuE4PprjBFty
+> [debug] [2026-04-18T22:47:39.008Z] #3 ← 200 OK: sfo1::m7wnk-1776552459446-14edb66fee30 [138ms]
+[client-debug] 2026-04-18T22:47:39.012Z Using provided API URL: https://api.vercel.com
+[client-debug] 2026-04-18T22:47:39.012Z Using provided user agent: vercel 51.5.1 node-v20.12.2 win32 (x64)
+[client-debug] 2026-04-18T22:47:39.012Z Setting platform version to harcoded value 2
+[client-debug] 2026-04-18T22:47:39.012Z Creating the deployment and starting upload...
+[client-debug] 2026-04-18T22:47:39.012Z Determining necessary files for upload...
+[client-debug] 2026-04-18T22:47:39.012Z Creating deployment
+[client-debug] 2026-04-18T22:47:39.013Z Sending deployment creation API request
+[client-debug] 2026-04-18T22:47:39.222Z Deployment response: {"error":{"code":"missing_files","message":"Missing files","missing":["5fe497f89536b6f79704f7ce53ed425dc56f876d","bea3edaae745af48e2bf07c166faefc75f01e1b0"]}}
+[client-debug] 2026-04-18T22:47:39.222Z Error: Deployment request status is 400
+[client-debug] 2026-04-18T22:47:39.222Z 2 files are required to upload
+[client-debug] 2026-04-18T22:47:39.222Z Yielding a 'file-count' event
+> [debug] [2026-04-18T22:47:39.222Z] Total files 2, 2 changed
+> [debug] [2026-04-18T22:47:39.222Z] Spinner invoked (Uploading [--------------------] (0.0B/146.5MB)) with a 0ms delay
+[client-debug] 2026-04-18T22:47:39.223Z Building an upload list...
+[client-debug] 2026-04-18T22:47:39.224Z Starting upload
+[client-debug] 2026-04-18T22:47:39.226Z POST https://api.vercel.com/v2/files?teamId=team_4UgDAFiYDSNcxuE4PprjBFty
+[client-debug] 2026-04-18T22:47:39.227Z POST https://api.vercel.com/v2/files?teamId=team_4UgDAFiYDSNcxuE4PprjBFty
+> [debug] [2026-04-18T22:47:41.449Z] Spinner invoked (Uploading [=====---------------] (36.6MB/146.5MB)) with a 0ms delay
+> [debug] [2026-04-18T22:47:43.590Z] Spinner invoked (Uploading [==========----------] (73.3MB/146.5MB)) with a 0ms delay
+[client-debug] 2026-04-18T22:47:45.512Z DONE in 6285ms: POST https://api.vercel.com/v2/files?teamId=team_4UgDAFiYDSNcxuE4PprjBFty
+[client-debug] 2026-04-18T22:47:45.512Z File bea3edaae745af48e2bf07c166faefc75f01e1b0 (C:\Users\Prashant\Downloads\Dine-Site.zip\Dine-Site\.vercel\source.tgz.part2) uploaded
+[client-debug] 2026-04-18T22:47:45.512Z Yielding a 'file-uploaded' event
+> [debug] [2026-04-18T22:47:45.512Z] Uploaded: C:\Users\Prashant\Downloads\Dine-Site.zip\Dine-Site\.vercel\source.tgz.part2 (46.52MB)
+> [debug] [2026-04-18T22:47:46.024Z] Spinner invoked (Uploading [===============-----] (109.9MB/146.5MB)) with a 0ms delay
+> [debug] [2026-04-18T22:47:48.099Z] Spinner invoked (Uploading [====================] (146.5MB/146.5MB)) with a 0ms delay
+[client-debug] 2026-04-18T22:47:51.613Z DONE in 12387ms: POST https://api.vercel.com/v2/files?teamId=team_4UgDAFiYDSNcxuE4PprjBFty
+[client-debug] 2026-04-18T22:47:51.613Z File 5fe497f89536b6f79704f7ce53ed425dc56f876d (C:\Users\Prashant\Downloads\Dine-Site.zip\Dine-Site\.vercel\source.tgz.part1) uploaded
+[client-debug] 2026-04-18T22:47:51.613Z Yielding a 'file-uploaded' event
+> [debug] [2026-04-18T22:47:51.613Z] Uploaded: C:\Users\Prashant\Downloads\Dine-Site.zip\Dine-Site\.vercel\source.tgz.part1 (100MB)
+[client-debug] 2026-04-18T22:47:51.613Z All files uploaded
+[client-debug] 2026-04-18T22:47:51.613Z Yielding a 'all-files-uploaded' event
+[client-debug] 2026-04-18T22:47:51.613Z Starting deployment creation
+[client-debug] 2026-04-18T22:47:51.613Z Creating deployment
+[client-debug] 2026-04-18T22:47:51.613Z Sending deployment creation API request
+[client-debug] 2026-04-18T22:47:52.457Z Deployment response: {"alias":["dine-site-yo-dc2e33e2.vercel.app","dine-site-toechi015-1048-yo-dc2e33e2.vercel.app"],"aliasAssigned":false,"automaticAliases":["dine-site-yo-dc2e33e2.vercel.app","dine-site-toechi015-1048-yo-dc2e33e2.vercel.app"],"bootedAt":1776552472314,"buildingAt":1776552472314,"buildSkipped":false,"createdAt":1776552472314,"creator":{"uid":"taj2GIK9bC4ImInx5bAoJXKq","username":"toechi015-1048"},"id":"dpl_Hv2mPZP1g1fStxwyKtAPXHsLNJvi","name":"dine-site","meta":{"gitCommitAuthorName":"toechi015","gitCommitAuthorEmail":"toechi015@gmail.com","gitCommitMessage":"Published your App","gitCommitRef":"main","gitCommitSha":"a8a342a5cda0e9309befdd0bcd995ed71534316d","gitDirty":"1"},"originCacheRegion":"iad1","project":{"id":"prj_HZoLW5nUjoNYGSbdJUQmVIWvkjiv","name":"dine-site","framework":null},"public":false,"readyState":"INITIALIZING","regions":["iad1"],"source":"cli","status":"INITIALIZING","target":"production","team":{"id":"team_4UgDAFiYDSNcxuE4PprjBFty","name":"yo","slug":"yo-dc2e33e2"},"type":"LAMBDAS","url":"dine-site-e20bx3odu-yo-dc2e33e2.vercel.app","version":2,"previewCommentsEnabled":true,"oidcTokenClaims":{"sub":"owner:yo-dc2e33e2:project:dine-site:environment:production","iss":"https://oidc.vercel.com/yo-dc2e33e2","scope":"owner:yo-dc2e33e2:project:dine-site:environment:production","aud":"https://vercel.com/yo-dc2e33e2","owner":"yo-dc2e33e2","owner_id":"team_4UgDAFiYDSNcxuE4PprjBFty","project":"dine-site","project_id":"prj_HZoLW5nUjoNYGSbdJUQmVIWvkjiv","environment":"production","plan":"hobby"},"lambdas":[{"id":"bld_1nztfdxpx","createdAt":1776552472615,"entrypoint":".","readyState":"READY","readyStateAt":1776552472615,"output":[]}],"aliasAssignedAt":null,"build":{"env":[]},"builds":[],"createdIn":"sfo1","env":[],"functions":null,"inspectorUrl":"https://vercel.com/yo-dc2e33e2/dine-site/Hv2mPZP1g1fStxwyKtAPXHsLNJvi","isInConcurrentBuildsQueue":false,"isInSystemBuildsQueue":true,"ownerId":"team_4UgDAFiYDSNcxuE4PprjBFty","plan":"hobby","projectId":"prj_HZoLW5nUjoNYGSbdJUQmVIWvkjiv","projectSettings":{"buildCommand":"pnpm --filter @workspace/chef-kingston run build","devCommand":null,"framework":null,"commandForIgnoringBuildStep":null,"installCommand":"pnpm install","outputDirectory":"artifacts/chef-kingston/dist/public","speedInsights":{"id":"kJ6VsTtvJqsQ2KXIawfri6pRjD4","hasData":false},"webAnalytics":{"id":"HmofZ0RsmLJTSZKP3SO4areYZ"},"nodeVersion":"24.x"},"routes":[{"handle":"filesystem"},{"src":"^/api(?:/(.*))$","dest":"/api/index.ts","check":true},{"src":"^(?:/(.*))$","dest":"/index.html","check":true}],"config":{"version":1,"secureComputePrimaryRegion":null,"secureComputeFallbackRegion":null,"functionTimeout":300,"functionType":"fluid","functionMemoryType":"standard","isUsingActiveCPU":true,"resourceConfig":{"buildQueue":{"configuration":"SKIP_NAMESPACE_QUEUE"}}},"attribution":{"commitMeta":{"name":"toechi015","email":"toechi015@gmail.com","isVerified":false}}}
+[client-debug] 2026-04-18T22:47:52.457Z Deployment created
+[client-debug] 2026-04-18T22:47:52.457Z Yielding a 'created' event
+Inspect: https://vercel.com/yo-dc2e33e2/dine-site/Hv2mPZP1g1fStxwyKtAPXHsLNJvi [33s]
+Production: https://dine-site-e20bx3odu-yo-dc2e33e2.vercel.app [33s]
+https://dine-site-e20bx3odu-yo-dc2e33e2.vercel.app> [debug] [2026-04-18T22:47:52.458Z] Spinner invoked (Building...) with a 0ms delay
+> [debug] [2026-04-18T22:47:52.458Z] #4 → GET https://api.vercel.com/v2/user
+[client-debug] 2026-04-18T22:47:52.458Z Waiting for deployment to be ready...
+[client-debug] 2026-04-18T22:47:52.459Z Waiting for builds and the deployment to complete...
+> [debug] [2026-04-18T22:47:52.595Z] #4 ← 200 OK: sfo1::pkd95-1776552473034-97805c501e53 [137ms]
+> [debug] [2026-04-18T22:47:52.597Z] #5 → GET https://api.vercel.com/v3/now/deployments/dpl_Hv2mPZP1g1fStxwyKtAPXHsLNJvi/events?direction=forward&follow=1&format=lines&teamId=team_4UgDAFiYDSNcxuE4PprjBFty
+[client-debug] 2026-04-18T22:47:54.180Z Deployment state changed to BUILDING
+[client-debug] 2026-04-18T22:47:54.180Z Yielding a 'building' event
+> [debug] [2026-04-18T22:47:54.180Z] Spinner invoked (Building...) with a 0ms delay
+> [debug] [2026-04-18T22:47:54.797Z] #5 ← 200 OK: sfo1::wmp2p-1776552473172-187db23724bc [2.20s]
+> [debug] [2026-04-18T22:47:54.798Z] Spinner invoked (Building: Running build in Washington, D.C., USA (East) – iad1) with a 0ms delay
+> [debug] [2026-04-18T22:47:54.798Z] Spinner invoked (Building: Build machine configuration: 2 cores, 8 GB) with a 0ms delay
+> [debug] [2026-04-18T22:47:54.798Z] Spinner invoked (Building: Retrieving list of deployment files...) with a 0ms delay
+> [debug] [2026-04-18T22:47:54.798Z] Spinner invoked (Building: Previous build caches not available.) with a 0ms delay
+> [debug] [2026-04-18T22:47:55.827Z] Spinner invoked (Building: Concatenating deployment archive files...) with a 0ms delay
+> [debug] [2026-04-18T22:47:55.827Z] Spinner invoked (Building: Extracting deployment files...) with a 0ms delay
+> [debug] [2026-04-18T22:48:16.522Z] Spinner invoked (Building: Extracted 33665 deployment files...) with a 0ms delay
+> [debug] [2026-04-18T22:48:22.727Z] Spinner invoked (Building: Running "vercel build") with a 0ms delay
+> [debug] [2026-04-18T22:48:22.727Z] Spinner invoked (Building: Vercel CLI 51.6.1) with a 0ms delay
+> [debug] [2026-04-18T22:48:26.857Z] Spinner invoked (Building: Detected `pnpm-lock.yaml` 9 which may be generated by pnpm@9.x or pnpm@10.x) with a 0ms delay
+> [debug] [2026-04-18T22:48:26.858Z] Spinner invoked (Building: Using pnpm@10.x based on project creation date) with a 0ms delay
+> [debug] [2026-04-18T22:48:26.858Z] Spinner invoked (Building: To use pnpm@9.x, manually opt in using corepack (https://vercel.com/docs/deployments/configure-a-build#corepack)) with a 0ms delay
+> [debug] [2026-04-18T22:48:26.858Z] Spinner invoked (Building: Running "install" command: `pnpm install`...) with a 0ms delay
+> [debug] [2026-04-18T22:48:26.858Z] Spinner invoked (Building: Scope: all 11 workspace projects) with a 0ms delay
+> [debug] [2026-04-18T22:48:26.858Z] Spinner invoked (Building: Lockfile is up to date, resolution step is skipped) with a 0ms delay
+> [debug] [2026-04-18T22:48:27.886Z] Spinner invoked (Building: Progress: resolved 1, reused 0, downloaded 0, added 0) with a 0ms delay
+> [debug] [2026-04-18T22:48:27.887Z] Spinner invoked (Building: Packages: +628) with a 0ms delay
+> [debug] [2026-04-18T22:48:27.887Z] Spinner invoked (Building: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++) with a 0ms delay
+> [debug] [2026-04-18T22:48:28.920Z] Spinner invoked (Building: Progress: resolved 628, reused 0, downloaded 90, added 33) with a 0ms delay
+> [debug] [2026-04-18T22:48:29.961Z] Spinner invoked (Building: Progress: resolved 628, reused 0, downloaded 208, added 90) with a 0ms delay
+> [debug] [2026-04-18T22:48:29.961Z] Spinner invoked (Building: Progress: resolved 628, reused 0, downloaded 330, added 162) with a 0ms delay
+> [debug] [2026-04-18T22:48:30.994Z] Spinner invoked (Building: Progress: resolved 628, reused 0, downloaded 368, added 176) with a 0ms delay
+> [debug] [2026-04-18T22:48:32.026Z] Spinner invoked (Building: Progress: resolved 628, reused 0, downloaded 377, added 176) with a 0ms delay
+> [debug] [2026-04-18T22:48:33.061Z] Spinner invoked (Building: Progress: resolved 628, reused 0, downloaded 457, added 210) with a 0ms delay
+> [debug] [2026-04-18T22:48:35.129Z] Spinner invoked (Building: Progress: resolved 628, reused 0, downloaded 544, added 245) with a 0ms delay
+> [debug] [2026-04-18T22:48:36.158Z] Spinner invoked (Building: Progress: resolved 628, reused 0, downloaded 626, added 282) with a 0ms delay
+> [debug] [2026-04-18T22:48:37.191Z] Spinner invoked (Building: Progress: resolved 628, reused 0, downloaded 628, added 370) with a 0ms delay
+> [debug] [2026-04-18T22:48:37.191Z] Spinner invoked (Building: Progress: resolved 628, reused 0, downloaded 628, added 377) with a 0ms delay
+> [debug] [2026-04-18T22:48:38.238Z] Spinner invoked (Building: Progress: resolved 628, reused 0, downloaded 628, added 399) with a 0ms delay
+> [debug] [2026-04-18T22:48:40.301Z] Spinner invoked (Building: Progress: resolved 628, reused 0, downloaded 628, added 567) with a 0ms delay
+> [debug] [2026-04-18T22:48:40.301Z] Spinner invoked (Building: Progress: resolved 628, reused 0, downloaded 628, added 628, done) with a 0ms delay
+> [debug] [2026-04-18T22:48:40.301Z] Spinner invoked (Building: .../bcrypt@6.0.0/node_modules/bcrypt install$ node-gyp-build) with a 0ms delay
+> [debug] [2026-04-18T22:48:40.301Z] Spinner invoked (Building: .../esbuild@0.27.3/node_modules/esbuild postinstall$ node install.js) with a 0ms delay
+> [debug] [2026-04-18T22:48:40.301Z] Spinner invoked (Building: .../esbuild@0.25.12/node_modules/esbuild postinstall$ node install.js) with a 0ms delay
+> [debug] [2026-04-18T22:48:40.301Z] Spinner invoked (Building: .../esbuild@0.18.20/node_modules/esbuild postinstall$ node install.js) with a 0ms delay
+> [debug] [2026-04-18T22:48:41.334Z] Spinner invoked (Building: .../esbuild@0.27.3/node_modules/esbuild postinstall: Done) with a 0ms delay
+> [debug] [2026-04-18T22:48:41.334Z] Spinner invoked (Building: .../esbuild@0.25.12/node_modules/esbuild postinstall: Done) with a 0ms delay
+> [debug] [2026-04-18T22:48:41.334Z] Spinner invoked (Building: .../esbuild@0.18.20/node_modules/esbuild postinstall: Done) with a 0ms delay
+> [debug] [2026-04-18T22:48:41.334Z] Spinner invoked (Building: .../bcrypt@6.0.0/node_modules/bcrypt install: Done) with a 0ms delay
+> [debug] [2026-04-18T22:48:41.334Z] Spinner invoked (Building: devDependencies:) with a 0ms delay
+> [debug] [2026-04-18T22:48:41.334Z] Spinner invoked (Building: + prettier 3.8.1) with a 0ms delay
+> [debug] [2026-04-18T22:48:41.335Z] Spinner invoked (Building: + typescript 5.9.3) with a 0ms delay
+> [debug] [2026-04-18T22:48:41.335Z] Spinner invoked (Building: ╭ Warning ─────────────────────────────────────────────────────────────────────╮) with a 0ms delay
+> [debug] [2026-04-18T22:48:41.335Z] Spinner invoked (Building: │                                                                              │) with a 0ms delay
+> [debug] [2026-04-18T22:48:41.335Z] Spinner invoked (Building: │   Ignored build scripts: protobufjs@7.5.4.                                   │) with a 0ms delay
+> [debug] [2026-04-18T22:48:41.335Z] Spinner invoked (Building: │   Run "pnpm approve-builds" to pick which dependencies should be allowed     │) with a 0ms delay
+> [debug] [2026-04-18T22:48:41.335Z] Spinner invoked (Building: │   to run scripts.                                                            │) with a 0ms delay
+> [debug] [2026-04-18T22:48:41.335Z] Spinner invoked (Building: │                                                                              │) with a 0ms delay
+> [debug] [2026-04-18T22:48:41.335Z] Spinner invoked (Building: ╰──────────────────────────────────────────────────────────────────────────────╯) with a 0ms delay
+> [debug] [2026-04-18T22:48:41.335Z] Spinner invoked (Building: Done in 14.2s using pnpm v10.28.0) with a 0ms delay
+> [debug] [2026-04-18T22:48:42.366Z] Spinner invoked (Building: > @workspace/chef-kingston@0.0.0 build /vercel/path0/artifacts/chef-kingston) with a 0ms delay
+> [debug] [2026-04-18T22:48:42.366Z] Spinner invoked (Building: > vite build --config vite.config.ts) with a 0ms delay
+> [debug] [2026-04-18T22:48:42.366Z] Spinner invoked (Building: vite v7.3.1 building client environment for production...) with a 0ms delay
+> [debug] [2026-04-18T22:48:42.367Z] Spinner invoked (Building: transforming...) with a 0ms delay
+> [debug] [2026-04-18T22:48:44.438Z] Spinner invoked (Building: ✓ 1795 modules transformed.) with a 0ms delay
+> [debug] [2026-04-18T22:48:44.438Z] Spinner invoked (Building: rendering chunks...) with a 0ms delay
+> [debug] [2026-04-18T22:48:44.438Z] Spinner invoked (Building: computing gzip size...) with a 0ms delay
+> [debug] [2026-04-18T22:48:44.438Z] Spinner invoked (Building: dist/public/index.html                                                                                0.75 kB │ gzip:   0.42 kB) with a 0ms delay
+> [debug] [2026-04-18T22:48:44.438Z] Spinner invoked (Building: dist/public/assets/att.Yeeup1CO9VY9Crw97iTvpDTiILgB9ae2yfNErH_GxAA.png_1775869943923-C3_MQqPr.jpeg   39.79 kB) with a 0ms delay
+> [debug] [2026-04-18T22:48:44.438Z] Spinner invoked (Building: dist/public/assets/att.J5mBriJkII7OGL5oPvxlZxyGMhLkpvzbH8sA1bQDX9o.png_1775869943923-CMQ4OYHo.jpeg   96.90 kB) with a 0ms delay
+> [debug] [2026-04-18T22:48:44.438Z] Spinner invoked (Building: dist/public/assets/att.YYNyzODCUYr-GbkJ2Nig5eg7uhaYcjBubYlMsDSVAYg_1775869943923-CObzwZjS.jpeg      102.17 kB) with a 0ms delay
+> [debug] [2026-04-18T22:48:44.438Z] Spinner invoked (Building: dist/public/assets/att.VvcqNuUBwxjs3UpPbbrYE9R9cY2Sr8uFMo7ANHklVJ4_1775869943923-DtoNGYJk.jpeg      102.24 kB) with a 0ms delay
+> [debug] [2026-04-18T22:48:44.438Z] Spinner invoked (Building: dist/public/assets/att.o6wypxRaEioByCQGwWXcek02sBjEzj9H8bGGx8y5RQI_1775869943923-CmfRAxeN.jpeg      118.00 kB) with a 0ms delay
+> [debug] [2026-04-18T22:48:44.438Z] Spinner invoked (Building: dist/public/assets/att.HQSPLJRNfF28v2i8Y4oH_xO7Im3GZ1e-4hCMbfyHlUk_1775869943923-z_1qDHl9.jpeg      125.18 kB) with a 0ms delay
+> [debug] [2026-04-18T22:48:44.438Z] Spinner invoked (Building: dist/public/assets/att.EkvSkwLjDBW1ODlDvD9LxFy62g3LHYLk-ov6o-AmAyQ_1775869943923-DderZv7j.jpeg      126.06 kB) with a 0ms delay
+> [debug] [2026-04-18T22:48:44.438Z] Spinner invoked (Building: dist/public/assets/att.He80MLl2WKJIpBo865cw2_TJW-lTG6BDeJQ-TINd5m8_1775869943923-BWaQaUY2.jpeg      133.86 kB) with a 0ms delay
+> [debug] [2026-04-18T22:48:44.438Z] Spinner invoked (Building: dist/public/assets/att.A69rdFWTe3wzITD52xuHTwgrojwY7VkksIX_4GHQRJI_1775869943923-DbZ2RoEF.jpeg      152.87 kB) with a 0ms delay
+> [debug] [2026-04-18T22:48:44.439Z] Spinner invoked (Building: dist/public/assets/att.zF1zSKs8HE67Fv1Ysn_cQNG7xuMXY-hnNeYQLjM67bU_1775869943923-DKBofi2_.jpeg      168.94 kB) with a 0ms delay
+> [debug] [2026-04-18T22:48:44.439Z] Spinner invoked (Building: dist/public/assets/att.qOSDHH62gq5NRRtaTOsXClmp7ZV4gqR2W9ulLehqcMY_1775869943923-D9xwEwav.jpeg      185.25 kB) with a 0ms delay
+> [debug] [2026-04-18T22:48:44.439Z] Spinner invoked (Building: dist/public/assets/att.rmF16ZLZXPQ2l38adXEuFJ76YofuI67T1r5bQiSxikc_1775869943923-flglr0fX.jpeg      218.74 kB) with a 0ms delay
+> [debug] [2026-04-18T22:48:44.439Z] Spinner invoked (Building: dist/public/assets/2937c4b6-6d7c-40d5-83a4-3bcbef198026_1776269595806-FRh14zIA.jpeg                 266.67 kB) with a 0ms delay
+> [debug] [2026-04-18T22:48:44.439Z] Spinner invoked (Building: dist/public/assets/64623fe8-c173-4fc9-bdb3-62695b6264df_1776269707231-Cvec1zOa.jpeg                 302.45 kB) with a 0ms delay
+> [debug] [2026-04-18T22:48:44.439Z] Spinner invoked (Building: dist/public/assets/att.7hdhp98sexptb5U1uI_eaTIHku5VtG_w7Z8Kh1QK6iY_1775869943923-BRRHj2-a.jpeg      384.92 kB) with a 0ms delay
+> [debug] [2026-04-18T22:48:44.439Z] Spinner invoked (Building: dist/public/assets/att.gFpqDOtNQJBmaSYuOZv0csVId2EXKcMW5hNcbS-Nr4M_1775869943923-BAM1ptxx.jpeg      407.07 kB) with a 0ms delay
+> [debug] [2026-04-18T22:48:44.439Z] Spinner invoked (Building: dist/public/assets/47c46ebf-97c4-4ac3-92d2-cb1d5b43eb79_1776270077781-BbJqS5nU.jpeg                 770.06 kB) with a 0ms delay
+> [debug] [2026-04-18T22:48:44.439Z] Spinner invoked (Building: dist/public/assets/index-BO9Aboua.css                                                               128.25 kB │ gzip:  19.65 kB) with a 0ms delay
+> [debug] [2026-04-18T22:48:44.439Z] Spinner invoked (Building: dist/public/assets/index-CVsNHsKr.js                                                                361.54 kB │ gzip: 108.78 kB) with a 0ms delay
+> [debug] [2026-04-18T22:48:44.439Z] Spinner invoked (Building: ✓ built in 3.13s) with a 0ms delay
+> [debug] [2026-04-18T22:48:44.439Z] Spinner invoked (Building: Detected `pnpm-lock.yaml` 9 which may be generated by pnpm@9.x or pnpm@10.x) with a 0ms delay
+> [debug] [2026-04-18T22:48:44.439Z] Spinner invoked (Building: Using pnpm@10.x based on project creation date) with a 0ms delay
+> [debug] [2026-04-18T22:48:44.439Z] Spinner invoked (Building: To use pnpm@9.x, manually opt in using corepack (https://vercel.com/docs/deployments/configure-a-build#corepack)) with a 0ms delay
+> [debug] [2026-04-18T22:48:44.439Z] Spinner invoked (Building: Installing dependencies...) with a 0ms delay
+> [debug] [2026-04-18T22:48:46.502Z] Spinner invoked (Building: Scope: all 11 workspace projects) with a 0ms delay
+> [debug] [2026-04-18T22:48:46.502Z] Spinner invoked (Building: Lockfile is up to date, resolution step is skipped) with a 0ms delay
+> [debug] [2026-04-18T22:48:46.502Z] Spinner invoked (Building: Already up to date) with a 0ms delay
+> [debug] [2026-04-18T22:48:46.502Z] Spinner invoked (Building: ╭ Warning ─────────────────────────────────────────────────────────────────────╮) with a 0ms delay
+> [debug] [2026-04-18T22:48:46.502Z] Spinner invoked (Building: │                                                                              │) with a 0ms delay
+> [debug] [2026-04-18T22:48:46.502Z] Spinner invoked (Building: │   Ignored build scripts: protobufjs@7.5.4.                                   │) with a 0ms delay
+> [debug] [2026-04-18T22:48:46.502Z] Spinner invoked (Building: │   Run "pnpm approve-builds" to pick which dependencies should be allowed     │) with a 0ms delay
+> [debug] [2026-04-18T22:48:46.502Z] Spinner invoked (Building: │   to run scripts.                                                            │) with a 0ms delay
+> [debug] [2026-04-18T22:48:46.502Z] Spinner invoked (Building: │                                                                              │) with a 0ms delay
+> [debug] [2026-04-18T22:48:46.502Z] Spinner invoked (Building: ╰──────────────────────────────────────────────────────────────────────────────╯) with a 0ms delay
+> [debug] [2026-04-18T22:48:46.502Z] Spinner invoked (Building: Done in 1.7s using pnpm v10.28.0) with a 0ms delay
+> [debug] [2026-04-18T22:48:46.502Z] Spinner invoked (Building: Using TypeScript 5.9.3 (local user-provided)) with a 0ms delay
+> [debug] [2026-04-18T22:48:47.538Z] Spinner invoked (Building: Error: artifacts/api-server/api/index.ts(2,17): error TS2835: Relative import paths need explicit file extensions in ECMAScript imports when '--moduleResolution' is 'node16' or 'nodenext'. Did you mean '../src/app.js'?) with a 0ms delay
+> [debug] [2026-04-18T22:48:47.539Z] Spinner invoked (Building: artifacts/api-server/api/index.ts(3,49): error TS2835: Relative import paths need explicit file extensions in ECMAScript imports when '--moduleResolution' is 'node16' or 'nodenext'. Did you mean '../src/lib/seedAdmin.js'?) with a 0ms delay
+[client-debug] 2026-04-18T22:48:50.704Z Yielding a 'error' event
+> [debug] [2026-04-18T22:48:50.711Z] Error: Error: artifacts/api-server/api/index.ts(2,17): error TS2835: Relative import paths need explicit file extensions in ECMAScript imports when '--moduleResolution' is 'node16' or 'nodenext'. Did you mean '../src/app.js'?
+artifacts/api-server/api/index.ts(3,49): error TS2835: Relative import paths need explicit file extensions in ECMAScript imports when '--moduleResolution' is 'node16' or 'nodenext'. Did you mean '../src/lib/seedAdmin.js'?
+
+Error: artifacts/api-server/api/index.ts(2,17): error TS2835: Relative import paths need explicit file extensions in ECMAScript imports when '--moduleResolution' is 'node16' or 'nodenext'. Did you mean '../src/app.js'?
+artifacts/api-server/api/index.ts(3,49): error TS2835: Relative import paths need explicit file extensions in ECMAScript imports when '--moduleResolution' is 'node16' or 'nodenext'. Did you mean '../src/lib/seedAdmin.js'?
+
+    at Now.handleDeploymentError (file:///C:/Users/Prashant/AppData/Roaming/npm/node_modules/vercel/dist/chunks/chunk-7V43C2HB.js:4756:12)
+    at processDeployment (file:///C:/Users/Prashant/AppData/Roaming/npm/node_modules/vercel/dist/chunks/chunk-7V43C2HB.js:4499:33)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Now.create (file:///C:/Users/Prashant/AppData/Roaming/npm/node_modules/vercel/dist/chunks/chunk-7V43C2HB.js:4647:24)
+    at async createDeploy (file:///C:/Users/Prashant/AppData/Roaming/npm/node_modules/vercel/dist/commands/deploy/index.js:180:12)
+    at async handleDefaultDeploy (file:///C:/Users/Prashant/AppData/Roaming/npm/node_modules/vercel/dist/commands/deploy/index.js:1615:18)
+    at async _Span.trace (C:\Users\Prashant\AppData\Roaming\npm\node_modules\vercel\node_modules\@vercel\build-utils\dist\index.js:32134:14)
+    at async main (file:///C:/Users/Prashant/AppData/Roaming/npm/node_modules/vercel/dist/index.js:24374:18)
+> [debug] [2026-04-18T22:48:50.711Z] handling error: Error: artifacts/api-server/api/index.ts(2,17): error TS2835: Relative import paths need explicit file extensions in ECMAScript imports when '--moduleResolution' is 'node16' or 'nodenext'. Did you mean '../src/app.js'?
+artifacts/api-server/api/index.ts(3,49): error TS2835: Relative import paths need explicit file extensions in ECMAScript imports when '--moduleResolution' is 'node16' or 'nodenext'. Did you mean '../src/lib/seedAdmin.js'?
+
+    at Now.handleDeploymentError (file:///C:/Users/Prashant/AppData/Roaming/npm/node_modules/vercel/dist/chunks/chunk-7V43C2HB.js:4756:12)
+    at processDeployment (file:///C:/Users/Prashant/AppData/Roaming/npm/node_modules/vercel/dist/chunks/chunk-7V43C2HB.js:4499:33)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Now.create (file:///C:/Users/Prashant/AppData/Roaming/npm/node_modules/vercel/dist/chunks/chunk-7V43C2HB.js:4647:24)
+    at async createDeploy (file:///C:/Users/Prashant/AppData/Roaming/npm/node_modules/vercel/dist/commands/deploy/index.js:180:12)
+    at async handleDefaultDeploy (file:///C:/Users/Prashant/AppData/Roaming/npm/node_modules/vercel/dist/commands/deploy/index.js:1615:18)
+    at async _Span.trace (C:\Users\Prashant\AppData\Roaming\npm\node_modules\vercel\node_modules\@vercel\build-utils\dist\index.js:32134:14)
+    at async main (file:///C:/Users/Prashant/AppData/Roaming/npm/node_modules/vercel/dist/index.js:24374:18)
+Error: artifacts/api-server/api/index.ts(2,17): error TS2835: Relative import paths need explicit file extensions in ECMAScript imports when '--moduleResolution' is 'node16' or 'nodenext'. Did you mean '../src/app.js'?
+artifacts/api-server/api/index.ts(3,49): error TS2835: Relative import paths need explicit file extensions in ECMAScript imports when '--moduleResolution' is 'node16' or 'nodenext'. Did you mean '../src/lib/seedAdmin.js'?
+
+> [debug] [2026-04-18T22:48:52.749Z] Telemetry subprocess killed due to timeout
+> [debug] [2026-04-18T22:48:52.774Z] Telemetry subprocess exited with code null
