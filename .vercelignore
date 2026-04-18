@@ -24,3 +24,6 @@ build
 **/dist
 **/build
 .replit*
+api/
+artifacts/api-server/
+deploy-minimal/
